@@ -1,0 +1,422 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+
+\title{\textbf{Solved selected problems of Special Relativity - Morin}}
+\author{Franco Zacco}
+\date{}
+
+\addtolength{\topmargin}{-3cm}
+\addtolength{\textheight}{3cm}
+
+\newcommand{\hatr}{\bm{\hat{r}}}
+\newcommand{\hatx}{\bm{\hat{x}}}
+\newcommand{\haty}{\bm{\hat{y}}}
+\newcommand{\hatz}{\bm{\hat{z}}}
+\newcommand{\hatth}{\bm{\hat{\theta}}}
+\newcommand{\hatphi}{\bm{\hat{\phi}}}
+\newcommand{\hatrho}{\bm{\hat{\rho}}}
+\theoremstyle{definition}
+\newtheorem*{solution*}{Solution}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{Chapter 1 - Kinematics, Part 1}
+
+	\begin{proof}{\textbf{1.1}}
+        The difference $t_R - t_L$ is given by
+        $$t_R - t_L = \frac{l'}{c-v} - \frac{l'}{c+v}$$
+        where $l'$ is half of the train length in the ground frame, but because
+        of the length contraction we know that
+        $$l' = \frac{L_{obs}}{2} = \frac{L_{prop}}{2\gamma}$$
+        knowing that $\gamma = c/\sqrt{c^2 - v^2} = 1/\sqrt{1 - v^2/c^2}$ and
+        calling $L = L_{prop}$ then
+        \begin{align*}
+            t_R - t_L &= \frac{L}{2\gamma(c-v)} - \frac{L}{2\gamma(c+v)}\\
+                      &= \frac{L}{2\gamma}\left(\frac{1}{c-v}- \frac{1}{c+v}\right)\\
+                      &= \frac{L}{2\gamma}\left(\frac{2v}{c^2-v^2}\right)\\
+                      &= L\left(\frac{v\sqrt{c^2-v^2}}{c(c^2-v^2)}\right)\\
+                      &= L\left(\frac{v}{c\sqrt{c^2-v^2}}\right)\\
+                      &= \frac{Lv}{c^2\gamma}
+        \end{align*}
+        The right side of the train should be hit by the light with a time
+        difference of $Lv/c^2$ from when the left clock was hitted (seen from
+        an outside observer), but because it is a moving train the right side
+        of the train is going to be hitted $Lv/c^2\gamma$ time after the left
+        side because of the time dilation effect, which is what we got.   
+    \end{proof}
+\cleardoublepage
+	\begin{proof}{\textbf{1.2}}
+        For the person to be able to get to the back of the train before the
+        clock on the back of the train hits $Lv/c^2$, the person should go at
+        a velocity at least of 
+        $$\frac{L}{Lv/c^2} = c^2/v$$
+        which is over the speed of light and therefore it's impossible for an
+        observer on the ground to see both the person at the front and at 
+        back of the train. 
+    \end{proof}
+	\begin{proof}{\textbf{1.3}}
+        In the $A$ and $B$ reference frame the time it takes $C$ to reach $B$
+        is $L/v$ but $C$ runs slow by a factor $\gamma$ so only $L/\gamma v$
+        elapses on $C$ during the journey. Therefore when $C$ reaches $B$ the
+        reading on $C$ is $L/\gamma v$ and the reading on $B$ is $L/v$. If
+        $v \ll c$ then we can use that $\sqrt{1 - \epsilon} \approx 1 - \epsilon/2$
+        so
+        $$\frac{L}{\gamma v} \approx \frac{L}{v}(1 - \frac{v^2}{2c^2}) =
+        \frac{L}{v} - \frac{Lv}{2c^2}$$
+        The difference between the readings of $C$ and $B$ is therefore
+        $\frac{Lv}{2c^2}$ so the readings between $C$ and $B$ can be made
+        arbitrarily close with a sufficiently small $v$.  
+    \end{proof}
+	\begin{proof}{\textbf{1.6}}
+        From an observer at the barn frame the length of the pole is going to
+        be contracted by a factor of $\gamma$, meaning that the observer will
+        see the pole with a length $L/\gamma$ which is less than $L$, the
+        proper length of the barn, so the pole for this observer is completely
+        inside the barn.
+
+        Let's see now what happens if the observer is now on the pole's frame,
+        in the pole's frame the length is contracted so on the pole's frame the
+        distance of the barn is $L/\gamma$ too, but this observer is going to see
+        the opening and closing of the barn's doors not happening simultaneously.
+        
+        If the pole is travellling from left to right then from the pole's
+        frame the barn is moving from right to left, so when the left door
+        closes the right door is going to be still closed for a time $Lv/c^2$ also
+        since the observer in the pole's frame sees this events time dilated,
+        from the pole's frame the right door opens at time $\gamma Lv/c^2$.
+        This means that the barn is going to travel an additional distance of
+        $\gamma Lv^2/c^2$, then
+        $$\frac{L}{\gamma} + \gamma L\frac{v^2}{c^2} = 
+        \gamma L(\frac{1}{\gamma^2} + \frac{v^2}{c^2}) =
+        \gamma L\left((1 - \frac{v^2}{c^2}) + \frac{v^2}{c^2}\right) = \gamma L$$
+        Therefore, for an observer in the pole's frame the pole is going to be
+        completely inside the barn too.
+    \end{proof}
+\cleardoublepage
+	\begin{proof}{\textbf{1.7}}
+        From the train frame the length of the tunnel is $L/\gamma$ because of
+        the length contraction then the front of the train is going to hit
+        first the front of the tunnel, provoking the train to explode.
+        
+        From the tunnel frame the length of the train is $L/\gamma$ because of
+        the length contraction then the back of the train is going to hit first
+        the back of the tunnel so the deactivation signal is sent to the bomb
+        on the front but the signal travels with speed $c$ so it takes to reach
+        the front of the train at the best a time $L/c$, so what we want is that
+        at least
+        \begin{align*}
+            \frac{L}{c} &= \frac{L}{v} - \frac{L}{\gamma v}\\
+            \frac{v}{c} &= 1 - \frac{1}{\gamma}\\
+            1 - \frac{v}{c} &= \sqrt{1 - \frac{v^2}{c^2}}\\
+            1 - 2\frac{v}{c} + \frac{v^2}{c^2} &= 1 - \frac{v^2}{c^2}\\
+            2\frac{v^2}{c^2} - 2\frac{v}{c} &= 0\\
+            \frac{v}{c}(\frac{v}{c} - 1) &= 0
+        \end{align*}
+        The solutions to this equation are $v=0$ and $v=c$ then the only way
+        for the bomb not to explode is that the train travels above the speed
+        of light which is not possible, therefore the bomb explodes.
+    \end{proof}
+	\begin{proof}{\textbf{1.8}}
+        From the stick frame the runner is going to be length contracted in the
+        direction in which the stick is falling.
+        
+        And from the runner frame the stick is going to be length contracted in
+        the direction which is running the runner, but in addition to that
+        due to the loss of simultaneity the stick is not going to hit flat
+        the floor, the rear part of the stick is going to hit first the floor
+        from the runner frame but then a cusp is going to form since the rear
+        part starts to bounce back but the other parts of the stick are still
+        falling.
+    \end{proof}
+	\begin{proof}{\textbf{1.10}}
+        From the cookie-cutter reference frame, the cookie dough is going to be
+        length contracted in the direction that the conveyor belt is moving
+        but when the cookie-cutter cuts the cookie the dough is slowed down, and
+        therefore the length contraction is undone to the cookie, so the cookie
+        is going to be stretched in the direction of the belt.
+        
+        From the dough frame, the cookie-cutter is length contracted but in
+        this frame, a loss of simultaneity is happening too, so the rear part
+        of the circular cookie cutter is cutting first and then the frontal
+        part, therefore, giving an "elliptical" form to the cookie, stretched
+        on the conveyor belt direction.  
+    \end{proof}
+\cleardoublepage
+	\begin{proof}{\textbf{1.13}}
+        If $q$ is moving with velocity $v$ then from $q$'s frame the movement
+        is seen in the opposite direction in the wire, and this means that the
+        protons are moving too, as seen from $q$ the distance between them is
+        length contracted so the charge density in this case is given by
+        $$\lambda_{protons} = \gamma \lambda_0$$
+
+        In the electrons case since they are already moving with velocity $v_0$
+        from $q$'s frame the velocity is given by
+        $$v_0'= \frac{v_0 - v}{1 - v_0v/c^2}$$
+        now we want to find how much the length between electrons is
+        contracted due to this movement. We know that the proper length between
+        the electrons is length contracted as seen from the wire due to the
+        velocity at which they move, $v_0$, so
+        $$L_{proper} = \gamma_{v_0} L_{0}$$
+        and from there we can determine the proper charge density as
+        $$\lambda_{proper} = \frac{-\lambda_0}{\gamma_{v_0}}$$
+        now that we have the proper length we can calculate the length
+        contraction between each electron as seen by $q$ and therefore the
+        charge density (which is multiplied by the $\gamma_{v_0'}$ factor) 
+        $$\lambda_{v_0'} = \gamma_{v_0'}\lambda_{proper} = 
+        \gamma_{v_0'}\frac{-\lambda_0}{\gamma_{v_0}}$$
+        Now we need to calculate $\gamma_{v_0'}$ where we define
+        $\beta_{v_0}' = v_0'/c$ then
+        \begin{align*}
+            \gamma_{v_0'} &= \frac{1}{\sqrt{1 - \beta_{v_0}^{'2}}}\\
+                &= \frac{1}{\sqrt{1 - (\frac{\beta_{v_0} - \beta}{1-\beta_{v_0}\beta})^2}}\\
+                &= \frac{1-\beta_{v_0}\beta}{\sqrt{(1-\beta_{v_0}\beta)^2 - (\beta_{v_0} - \beta)^2}}\\
+                &= \frac{1-\beta_{v_0}\beta}{\sqrt{
+                    1 - 2\beta_{v_0}\beta + \beta_{v_0}^2\beta^2 - \beta_{v_0}^2 + 2\beta_{v_0}\beta - \beta^2 
+                }}\\
+                &= \frac{1-\beta_{v_0}\beta}{\sqrt{\beta_{v_0}^2\beta^2 - \beta_{v_0}^2 - \beta^2 + 1}}\\
+                &= \frac{1-\beta_{v_0}\beta}{\sqrt{\beta_{v_0}^2(\beta^2 - 1) -\beta^2 + 1}}\\
+                &= \frac{1-\beta_{v_0}\beta}{\sqrt{(\beta^2 - 1)(\beta_{v_0}^2 -1)}}\\
+                &= \gamma_{v_0}\gamma(1-\beta_{v_0}\beta)
+        \end{align*}
+        Therefore, the charge density for the electrons is
+        $$\lambda_{electrons} = \gamma_{v_0'}\frac{-\lambda_0}{\gamma_{v_0}} =
+        -\gamma\lambda_0(1-\beta_{v_0}\beta)$$
+        and the net charge density is given by
+        \begin{align*}
+            \lambda_{net} &= \lambda_{protons} + \lambda_{electrons}\\
+                &= \gamma\lambda_0 - \gamma\lambda_0(1-\beta_{v_0}\beta)\\
+                &= \gamma\lambda_0\beta_{v_0}\beta
+        \end{align*}
+        which is non-zero as we wanted, assuming $\beta_{v_0}$ is positive,
+        depending on the sign of $\beta$ the $\lambda_{net}$ is going to be
+        positive or negative, meaning that the charge $q$ is going to move
+        towards or away of the wire.
+    \end{proof}
+	\begin{proof}{\textbf{1.24}}
+        When Alice's watch shows a time $T$, she waves, but on Bob's watch a
+        time $\gamma T$ has passed, at that moment he waves too.
+
+        When Bob's waves at $\gamma T$ as seen from his watch, on Alice's watch
+        the time shown is $\gamma^2 T$, that's when she waves.
+
+        When Alice's waves at $\gamma^2 T$ as seen from her watch, on Bob's
+        watch the time shown is $\gamma^3 T$, that's when he waves.
+        And so on.
+    \end{proof}
+	\begin{proof}{\textbf{1.26}}
+        \begin{itemize}
+            \item [(a)] On the ground frame the train is length contracted to
+            $L/\gamma$ so for the back of the train to be at the end of the
+            tunnel the train should pass the tunnel length, that from the
+            ground is $L$, and the entire train should be outside the tunnel,
+            then the entire length that should be covered by the train is
+            $L + L/\gamma$, also we know that the train is travelling at speed
+            $3/5c$, then
+            $$t = \frac{L + L/\gamma}{3/5c}
+                = \frac{L(1 + 1/\gamma)}{3/5c}
+                = \frac{9/5L}{3/5c}
+                = 3\frac{L}{c}$$
+            where we used that $\gamma = \gamma_{3/5} = 5/4$
+            \item [(b)] For the person to be at the end of the train at the
+            moment the train leaves the tunnel, the person should cover the
+            length of the tunnel $L$ in the time we calculated in (a), then
+            $$v_{person} = \frac{L}{3\frac{L}{c}} = \frac{1}{3}c$$
+            \item [(c)] The time it takes for the person to reach the back of
+            the train at the end of the tunnel seen from the ground frame is
+            $3L/c$ as we saw, then on the person's watch due to
+            the time dilation the person sees
+            $$t_{person} = \frac{t_{ground}}{\gamma}
+                = \frac{\frac{3L}{c}}{\gamma}
+                = \frac{\frac{3L}{c}}{\frac{3}{\sqrt{8}}}
+                = \sqrt{8}\frac{L}{c}$$   
+            where we used that $\gamma = \gamma_{1/3} = 3/\sqrt{8}$
+            \end{itemize}
+    \end{proof}
+	\begin{proof}{\textbf{1.27}}
+        \begin{itemize}
+            \item [(a)] The horizontal span of the stick in $S'$ frame is given
+            by $L\cos{30}$ but since $S'$ is moving with respect to the ground
+            with a velocity of $4/5c$ this horizontal span is going to be length contracted seen from the
+            ground, then
+            $$H_{ground} = \frac{L \cos{30}}{\gamma_{4/5}}
+                = \frac{L\sqrt{3}/2}{5/3}
+                = L\frac{3\sqrt{3}}{10}$$
+            where we used that $\gamma_{4/5} = 5/3$
+            \item [(b)] The photons coming from the points that are furthest
+            away from the observer are going to arrive late to the observer,
+            in addition to that, since the stick is moving, the horizontal span
+            of the stick should look longer. 
+        \end{itemize}
+    \end{proof}
+	\begin{proof}{\textbf{1.32}}
+    \begin{itemize}
+        \item [(a)] From the pole's frame the length of the barn is $L/\gamma$
+        because of the length contraction, so when the front part of the pole 
+        reaches to the end of the barn the back part of the pole is still outside
+        the barn then it has to travel a distance of $L - L/\gamma$ to reach
+        the entrance of the barn which takes a time
+        $$\Delta t = \frac{L - L/\gamma}{v}$$
+        When the front part of the pole reaches the end of the barn,
+        the watch at the start of the barn should read $-\frac{L - L/\gamma}{v}$
+        so after a time $\frac{L - L/\gamma}{v}$ this watch reads $0$ as we
+        wanted, therefore the watch at the end of the barn at that moment
+        should read
+        $$t = -\frac{Lv}{c^2} -\frac{L - L/\gamma}{v}$$
+
+        \item [(b)] From the barn's frame which has a length of $L$ the pole is
+        going to be length contracted to $L/\gamma$, this means that for the
+        front of the pole to reach the end of the barn a distance of
+        $L - L/\gamma$ should be covered, therefore the time it takes for the
+        front of the pole to reach the end of the barn is
+        $$\Delta t = \frac{L - L/\gamma}{v}$$
+        in adition to that the watch on the front of the pole reads $-Lv/c^2$
+        when the back of the pole match with the start of the barn so when the
+        front of the pole matches with the end of the barn the front clock
+        should read
+        $$t = \frac{-Lv}{c^2} + \frac{L - L/\gamma}{v}$$
+    \end{itemize}
+    \end{proof}
+	\begin{proof}{\textbf{1.35}}
+    \begin{itemize}
+        \item [(a)] From the ground frame due to the length contraction the
+        train has a length of $L/\gamma$, and since the gap closing velocity
+        is $c-v$ then the time it takes for the photon to reach the front of
+        the train from the ground frame is $L/\gamma(c-v)$ so the distance
+        $D$ the photon has to travel is given by
+        \begin{align*}
+            D &= \frac{cL}{\gamma(c-v)}
+        \end{align*}
+        \item [(b)] In this case to show that the time it takes for the front
+        part of the train to reach the house is the same as $L/c$ (the time it
+        takes for the photon to get to the front of the train), we length
+        contract the result we got from part (a) because the train sees the
+        distance between the tree and the house length contracted as
+        $\frac{cL}{\gamma^2(c-v)}$ but this distance takes into account the
+        length of the train so we subtract the length of the train to get the
+        distance from the front of the train to the house as
+        $$\frac{cL}{\gamma^2(c-v)} - L$$        
+        Also, we know that the train travels at a velocity $v$ so we divide by
+        $v$ to obtain the time it takes for the front part of the train to
+        reach the house
+        \begin{align*}
+            \frac{\frac{cL}{\gamma^2(c-v)} - L}{v}
+                &= \left[\frac{\frac{c(c^2-v^2)}{c^2(c-v)} - 1}{v}\right]L \\
+                &= \left[\frac{(c^2-v^2)}{cv(c-v)} - \frac{1}{v}\right]L \\
+                &= \left[\frac{c^2-v^2 - c(c-v)}{cv(c-v)}\right]L \\
+                &= \left[\frac{- v^2 + cv}{cv(c-v)}\right]L \\
+                &= \left[\frac{cv(1 - v/c)}{cv(c-v)}\right]L \\
+                &= \left[\frac{1 - v/c}{c(1 - v/c)}\right]L \\
+                &= \frac{L}{c}
+        \end{align*}
+        So after doing some algebra we got the result we wanted.
+    \end{itemize}
+    \end{proof}
+\cleardoublepage
+    \begin{proof}{\textbf{1.37}}
+    \begin{itemize}
+        \item [(a)] From the ground reference frame the person is going to
+        travel a distance $fL$ before reaching the photon which is going to take
+        a time $fL/v$. Then the photon is going to travel a distance $(1-f)L$
+        before reaching the person and that is going to take a time $(1-f)L/c$.
+        These times must be equal therefore
+        \begin{align*}
+            \frac{fL}{v} &= \frac{(1 - f)L}{c} \\
+            f\frac{c}{v} &= 1 - f \\
+            f\left(1 + \frac{c}{v}\right) &= 1 \\
+            f &= \frac{1}{1 + \frac{c}{v}}
+        \end{align*}
+        \item [(b)] From the person's frame the tunnel is going to travel a
+        distance $fL/\gamma$ before the person reaches the photon due to length
+        contraction, this is going to take a time $fL/\gamma v$.
+        On the other hand the photon is going to travel a distance
+        $(1-f)L/\gamma$ before reaching the person which is going to take a
+        time $(1-f)L/\gamma c$. These times must be equal therefore
+        \begin{align*}
+            \frac{fL}{\gamma v} &= \frac{(1 - f)L}{\gamma c} \\
+            f\frac{c}{v} &= 1 - f \\
+            f\left(1 + \frac{c}{v}\right) &= 1 \\
+            f &= \frac{1}{1 + \frac{c}{v}}
+        \end{align*}
+    \end{itemize}        
+    \end{proof}
+    \begin{proof}{\textbf{1.40}}
+        If $q$ is moving with velocity $v = 3c/5$ then from $q$'s frame the movement
+        is seen in the opposite direction in the wire, and this means that the
+        protons are moving too, as seen from $q$ the distance between them is
+        length contracted so the charge density in this case is given by
+        \begin{align*}
+            \lambda_{protons} &= \gamma_{3/5} \lambda_0 \\
+                &= \frac{5}{4} \lambda_0
+        \end{align*}
+
+        In the electrons case since they are already moving with velocity
+        $v_0 = 4c/5$ from $q$'s frame the velocity is given by
+        \begin{align*}
+            v_0'&= \frac{4c/5 - 3c/5}{1 - 12c^2/25c^2}\\
+                &= \frac{1/5}{13/25}c \\
+                &= \frac{5}{13}c            
+        \end{align*}
+        now we want to find how much the length between electrons is
+        contracted due to this movement. We know that the proper length between
+        the electrons is length contracted as seen from the wire due to the
+        velocity at which they move, $v_0 = 4c/5$, so
+        \begin{align*}
+            L_{proper} &= \gamma_{4/5} L_{0} \\
+                &= \frac{5}{3} L_{0}
+        \end{align*}
+        and from there we can determine the proper charge density as
+        $$\lambda_{proper}
+            = \frac{-\lambda_0}{\gamma_{4/5}} 
+            = -\frac{3}{5}\lambda_0$$
+        now that we have the proper length we can calculate the length
+        contraction between each electron as seen by $q$ and therefore the
+        charge density for the electrons (which is multiplied by the
+        $\gamma_{v_0'} = \gamma_{5/13}$ factor) 
+        \begin{align*}
+            \lambda_{v_0'}
+                &= \gamma_{5/13}\lambda_{proper} \\
+                &= \gamma_{5/13}\frac{-\lambda_0}{\gamma_{4/5}} \\
+                &= -\left(\frac{13}{12}\right)\left(\frac{3}{5}\right)\lambda_0 \\
+                &= -\frac{13}{20} \lambda_0
+        \end{align*}
+        Therefore the net charge density is given by
+        \begin{align*}
+            \lambda_{net} &= \lambda_{protons} + \lambda_{electrons}\\
+                &= \frac{5}{4}\lambda_0 - \frac{13}{20}\lambda_0\\
+                &= \frac{3}{5}\lambda_0
+        \end{align*}
+    \end{proof}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
