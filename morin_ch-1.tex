@@ -203,6 +203,115 @@
         positive or negative, meaning that the charge $q$ is going to move
         towards or away of the wire.
     \end{proof}
+    \begin{proof}{\textbf{1.15}}
+        Since the light beam moves at $c/n$ with respect to the water and the water
+        moves at $v$ with respect to the ground then the relativistic way of computing
+        the velocities is as follows
+        \begin{align*}
+            V &= \frac{\frac{c}{n} + v}{1 + \frac{cv}{nc^2}}\\
+              &= \frac{\frac{c}{n} + v}{1 + \frac{v}{nc}}
+        \end{align*}
+        Let us assume now that $v \ll c$. Let's start by multiplying both numerator
+        and denominator by $1-\frac{v}{nc}$ then we have that
+        \begin{align*}
+            \frac{
+                (\frac{c}{n} + v)(1-\frac{v}{nc})
+                }{
+                (1 + \frac{v}{nc})(1-\frac{v}{nc})
+            } &= \frac{
+                c(\frac{1}{n} - \frac{v}{n^2c} + \frac{v}{c} - \frac{v^2}{nc^2})
+                }{
+                (1 -\frac{v}{nc} + \frac{v}{nc} -\frac{v^2}{n^2c^2})
+            }
+            \\
+            &= \frac{
+                c(\frac{1}{n} - \frac{v}{n^2c} + \frac{v}{c} - \frac{v^2}{nc^2})
+                }{
+                (1 -\frac{v^2}{n^2c^2})
+            }
+        \end{align*}
+        Since we know that $v \ll c$ then we remove the terms involving 
+        $\frac{v^2}{c^2}$ because we can assume that $\frac{v^2}{c^2} \ll 1$
+        and therefore the equation becomes
+        \begin{align*}
+            c(\frac{1}{n} - \frac{v}{n^2c} + \frac{v}{c}) &= \frac{c}{n} - \frac{v}{n^2} + v\\
+                &= \frac{c}{n} + (1-\frac{1}{n^2})v
+        \end{align*}
+        Then $A = 1-\frac{1}{n^2}$.
+    \end{proof}
+\cleardoublepage
+	\begin{proof}{\textbf{1.16}}
+        From $C$'s frame the velocities of $A$ and $B$ are
+        $$u_A = \frac{\frac{4c}{5} - v}{1 - \frac{4v}{5c}}$$
+        and
+        $$u_B = \frac{\frac{3c}{5} - v}{1 - \frac{3v}{5c}}$$
+        where $v$ is the unknown velocity at which $C$ is travelling.
+        Since we want that the velocities of $A$ and $B$ be the same from $C$'s frame,
+        then must happen that $u_A = -u_B$ so
+        \begin{align*}
+            \frac{\frac{4c}{5} - v}{1 - \frac{4v}{5c}} &= -\frac{\frac{3c}{5} - v}{1 - \frac{3v}{5c}} \\
+            (\frac{4c}{5}-v)(1-\frac{3v}{5c}) &= (v - \frac{3c}{5})(1 - \frac{4v}{5c}) \\
+            \frac{4c}{5} - \frac{12}{25}v - v + \frac{3v^2}{5c} &= v - \frac{4v^2}{5c} - \frac{3c}{5} + \frac{12}{25}v\\
+            \frac{7c}{5}-\frac{24}{25}v - 2v + \frac{7v^2}{5c}
+        \end{align*}
+        Let us assume now that $c=1$ then we have that
+        \begin{align*}
+            \frac{7}{5}-\frac{74}{25}v + \frac{7v^2}{5} &= 0\\
+            35-74v + 35v^2 &= 0
+        \end{align*}
+        The solutions to this equation are $v_1 = 5/7$ and $v_2 = 7/5$, since $v_2$
+        would give us a value above $c$ then we keep $v_1$.
+        
+        Finally, by replacing $v_1$ value we get the velocity at which both $A$ and $B$
+        will approach to $C$ as seen from $C$'s frame.
+        \begin{align*}
+            u &= \frac{\frac{4c}{5} -  \frac{5c}{7}}{1 - \frac{4}{5}\cdot \frac{5}{7}}\\
+              &= \frac{\frac{3}{35}c}{\frac{15}{35}}\\
+              &= \frac{1}{5}c
+        \end{align*}
+    \end{proof}
+\cleardoublepage
+	\begin{proof}{\textbf{1.18}}
+        We want to solve this problem by mathematical induction so we start by proving
+        the base step, we know that the velocity of the object seen from $S_1$ is
+        $\beta_1$ so if we apply the given equation we have that
+        \begin{align*}
+            \beta_{(1)} &= \frac{P_{1}^{+} - P_{1}^{-}}{P_{1}^{+} + P_{1}^{-}} \\
+                &= \frac{(1+\beta_1)-(1-\beta_1)}{(1+\beta_1)+(1-\beta_1)} \\
+                &= \frac{2\beta_1}{2} = \beta_1
+        \end{align*}
+        Now suppose that $\beta_{(N-1)}$ holds, we want to prove that also holds for
+        $\beta_{(N)}$. As we know, seen from $S_N$ the velocity $\beta_{(N)}$ of
+        the object is the relativistic sum between $\beta_{(N-1)}$ (which is the 
+        velocity of the object seen from $S_{N-1}$) and $\beta_N$ (The velocity at
+        which $S_{N-1}$ is moving), then
+        \begin{align*}
+            \beta_{(N)} &= \frac{\beta_{(N-1)} + \beta_N}{1 + \beta_{(N-1)}\beta_{N}} \\
+                &= \frac{
+                    \frac{P_{N-1}^+ - P_{N-1}^-}{P_{N-1}^+ + P_{N-1}^-} + \beta_N
+                    }{
+                    1 + \frac{P_{N-1}^+ - P_{N-1}^-}{P_{N-1}^+ + P_{N-1}^-}\beta_{N}
+                    } \\
+                &= \frac{
+                    \frac{P_{N-1}^+ - P_{N-1}^- + (P_{N-1}^+ + P_{N-1}^-)\beta_N}{P_{N-1}^+ + P_{N-1}^-}
+                    }{
+                    \frac{P_{N-1}^+ + P_{N-1}^- + (P_{N-1}^+ - P_{N-1}^-)\beta_N}{P_{N-1}^+ + P_{N-1}^-}
+                    } \\
+                &= \frac{
+                    P_{N-1}^+(1+\beta_N) - P_{N-1}^-(1-\beta_N)
+                }{
+                    P_{N-1}^+(1+\beta_N) + P_{N-1}^-(1-\beta_N)
+                }
+        \end{align*}
+        Here we used the assumption that the equation holds for $\beta_{(N-1)}$.
+        Finally by the definition of $P_N^+$ and $P_N^-$ we have that
+        $P_N^+ = P_{N-1}^+(1+\beta_N)$ and $P_N^- = P_{N-1}^-(1-\beta_N)$
+        therefore
+        \begin{align*}
+            \beta_{(N)} &= \frac{P_{N}^+ - P_{N}^-}{P_{N}^+ + P_{N}^-}
+        \end{align*}
+    \end{proof}
+
 	\begin{proof}{\textbf{1.24}}
         When Alice's watch shows a time $T$, she waves, but on Bob's watch a
         time $\gamma T$ has passed, at that moment he waves too.
@@ -214,6 +323,7 @@
         watch the time shown is $\gamma^3 T$, that's when he waves.
         And so on.
     \end{proof}
+\cleardoublepage
 	\begin{proof}{\textbf{1.26}}
         \begin{itemize}
             \item [(a)] On the ground frame the train is length contracted to
@@ -397,6 +507,110 @@
                 &= \frac{3}{5}\lambda_0
         \end{align*}
     \end{proof}
+\cleardoublepage
+    \begin{proof}{\textbf{1.41}}
+        Let $\gamma_u = 1/\sqrt{1-u^2}$ and $\gamma_v = 1/\sqrt{1-v^2}$.
+        Let us say that $w = (u + v)/(1 + uv)$ i.e. $w$ is the relativistic addition
+        of $u$ and $v$, then the corresponding $\gamma$ to $w$ is given by  
+        \begin{align*}
+            \gamma &= \frac{1}{\sqrt{1-w^2}}\\
+                &= \frac{1}{\sqrt{1-\frac{(u+v)^2}{(1+uv)^2}}}\\
+                &= \frac{1}{\sqrt{\frac{(1+uv)^2 -(u+v)^2}{(1+uv)^2}}}\\
+                &= \frac{1}{\frac{\sqrt{1+2uv+u^2v^2 - (u^2 + 2uv +v^2)}}{1+uv}}\\
+                &= \frac{1+uv}{\sqrt{1+u^2v^2 -u^2 -v^2}}\\
+                &= \frac{1+uv}{\sqrt{1-u^2 -v^2(1-u^2)}}\\
+                &= \frac{1+uv}{\sqrt{(1-u^2)(1-v^2)}} = \gamma_u \gamma_v (1+uv)\\
+        \end{align*}
+        In case $w = (u - v)/(1 - uv)$ i.e. $w$ is the relativistic subtraction
+        between $u$ and $v$ we have that
+        \begin{align*}
+            \gamma &= \frac{1}{\sqrt{1-w^2}}\\
+                &= \frac{1}{\sqrt{1-\frac{(u-v)^2}{(1-uv)^2}}}\\
+                &= \frac{1}{\sqrt{\frac{(1-uv)^2 -(u-v)^2}{(1-uv)^2}}}\\
+                &= \frac{1}{\frac{\sqrt{1-2uv+u^2v^2 - (u^2 - 2uv +v^2)}}{1-uv}}\\
+                &= \frac{1-uv}{\sqrt{1+u^2v^2 -u^2 -v^2}}\\
+                &= \frac{1-uv}{\sqrt{1-u^2 -v^2(1-u^2)}}\\
+                &= \frac{1-uv}{\sqrt{(1-u^2)(1-v^2)}} = \gamma_u \gamma_v (1-uv)\\
+        \end{align*}
+    \end{proof}
+\cleardoublepage
+    \begin{proof}{\textbf{1.44}}
+        Let us determine first the time it takes for the ball to travel to the front of
+        the train from the ground frame. From the ground frame the length of the
+        train is $L/\gamma$ and the ball is travelling at a velocity given by the 
+        relativistic subtraction of the velocities of the ball and the train i.e
+        $\frac{u-v}{1-uv/c^2}$ so the time it takes for the ball to get to the front of
+        the train from the ground frame is
+        \begin{align*}
+            t &= \frac{L}{\gamma(\frac{u-v}{1-uv/c^2})} \\
+              &= \frac{L(1-uv/c^2)}{\gamma(u-v)} 
+        \end{align*}
+        On the other hand, in the train frame the time it takes for the ball to go from
+        the back of the train to the front is $L/u$. Now if we suppose there is a clock
+        on the back of the train which reads $0$ at the moment the front of the
+        train passes the tree seen from the ground frame then this clock should read
+        $Lv/c^2 + L/u$ when the back of the train passes the tree due to the rear clock
+        ahead effect. Then the time elapsed in the ground frame taking into account the
+        time dilation effect is
+        \begin{align*}
+            t = \gamma(\frac{Lv}{c^2} + \frac{L}{u})
+        \end{align*}
+        Therefore if we use both equations we get that
+        \begin{align*}
+            \gamma(\frac{Lv}{c^2} + \frac{L}{u}) &= \frac{L(1-uv/c^2)}{\gamma(u-v)}\\
+            \gamma^2(u-v)(\frac{v}{c^2} + \frac{1}{u}) &= \frac{c^2-uv}{c^2}\\
+            \gamma^2(u-v)(\frac{uv+c^2}{c^2u}) &= \frac{c^2-uv}{c^2}\\
+            \gamma^2(u-v)(uv+c^2) &= uc^2-u^2v\\
+            \gamma^2(u^2v + uc^2-uv^2-vc^2) &= uc^2-u^2v\\
+            u^2(v(\gamma^2+1)) + u(c^2(\gamma^2-1) - v^2) - vc^2 = 0
+        \end{align*}
+        Solving this equation we get the value of $u$ so that the ball
+        hits the front simultaneously (as measured in the ground frame) at the moment
+        the back of the train is passing the tree. The solution is given by
+        \begin{align*}
+            u = \frac{
+                -(c^2(\gamma^2-1) - v^2) \pm \sqrt{(
+                    c^2(\gamma^2-1) - v^2)^2 + 4v^2c^2(\gamma^2+1)
+                }
+            }{2v(\gamma^2+1)}
+        \end{align*}
+        Now the valid solutions to this equation must be real therefore the discriminant
+        must be bigger or equal to 0. Also, let's recall that
+        $$\gamma^2 - 1 = \frac{c^2}{c^2-v^2} -1 = \frac{v^2}{c^2-v^2}$$
+        and that 
+        $$\gamma^2 + 1 = \frac{c^2}{c^2-v^2} +1 = \frac{2c^2 - v^2}{c^2-v^2}$$
+        then
+        \begin{align*}
+            (c^2(\gamma^2-1) - v^2)^2 + 4v^2c^2(\gamma^2+1) &=
+                (\frac{c^2v^2}{c^2-v^2} - v^2)^2 + 4v^2c^2(\frac{2c^2 - v^2}{c^2-v^2})\\
+                &= v^4(\frac{c^2}{c^2-v^2} - 1)^2 + 4v^2c^2(\frac{2c^2 - v^2}{c^2-v^2})\\
+                &= \frac{v^8}{(c^2-v^2)^2} + 4v^2c^2(\frac{2c^2 - v^2}{c^2-v^2})\\
+                &= \frac{v^8 + 4v^2c^2(2c^2 - v^2)(c^2-v^2)}{(c^2-v^2)^2}
+        \end{align*}
+        Then if $v<c$ as we know it should be, then the equation is positive.
+    \end{proof}
+    \begin{proof}{\textbf{1.49}}
+        The time it takes for the bullet to go from the back to the front of the train
+        in the train frame is $L/u$ and this elapsed time in the ground frame due to the
+        time dilation effect becomes $\gamma(L/u)$.
+        
+        On the other hand, the velocity seen from the ground frame at which the bullet
+        is travelling is $\frac{u-v}{1-(uv/c^2)}$. So we have that
+        $$\frac{u-v}{1-(uv/c^2)} = \frac{x}{\gamma(L/u)}$$
+        where $x$ is the distance travelled in the lapse $\gamma(L/u)$ seen from the
+        ground frame, therefore
+        $$x = L\left(\frac{\gamma(u-v)}{u-(u^2v/c^2)}\right)$$
+        When the first bullet is at $x$ the next bullet is fired, also given that the
+        train is length contracted then it measures $L/\gamma$ seen from the ground
+        frame, so the number of bullets in flight simultaneously (from the ground frame)
+        is 
+        \begin{align*}
+            L/\gamma &= nx\\
+            1/\gamma &= n\left(\frac{\gamma(u-v)}{u-(u^2v/c^2)}\right)\\
+            n &= \frac{u-(u^2v/c^2)}{\gamma^2(u-v)}             
+        \end{align*}
+    \end{proof}
+
 \end{document}
 
 
