@@ -1,0 +1,269 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+
+\title{\textbf{Solved selected problems of Special Relativity - Morin}}
+\author{Franco Zacco}
+\date{}
+
+\addtolength{\topmargin}{-3cm}
+\addtolength{\textheight}{3cm}
+
+\newcommand{\hatr}{\bm{\hat{r}}}
+\newcommand{\hatx}{\bm{\hat{x}}}
+\newcommand{\haty}{\bm{\hat{y}}}
+\newcommand{\hatz}{\bm{\hat{z}}}
+\newcommand{\hatth}{\bm{\hat{\theta}}}
+\newcommand{\hatphi}{\bm{\hat{\phi}}}
+\newcommand{\hatrho}{\bm{\hat{\rho}}}
+\theoremstyle{definition}
+\newtheorem*{solution*}{Solution}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{Chapter 2 - Kinematics, Part 2}
+
+	\begin{proof}{\textbf{2.1}}
+        By checking the Excercise 1 of Section 1.5 we have that the velocity $v$ and
+        the factor $\gamma$ for the different frame combinations are
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{lllllll}
+            \hline
+                     & AB      & AC     & AD            & BC     & BD            & CD            \\ \hline
+            $v$      & $5c/13$ & $4c/5$ & $c/5$         & $3c/5$ & $c/5$         & $5c/7$        \\
+            $\gamma$ & $13/12$ & $5/3$  & $5/2\sqrt{6}$ & $5/4$  & $5/2\sqrt{6}$ & $7/2\sqrt{6}$ \\
+            \end{tabular}
+        \end{table}
+
+        Now let us verify the values of the table we have using the Lorentz
+        Transformations
+        \begin{align*}
+            \Delta x &= \gamma (\Delta x' + v\Delta t')\\
+            \Delta t &= \gamma (\Delta t' + v\Delta x'/c^2)
+        \end{align*}
+        From frame $A$ with $\Delta t_A$ and $\Delta x_A$ we calculate $\Delta t_B$ and
+        $\Delta x_B$ for frame $B$ as follows
+        \begin{align*}
+            \Delta x_B &= \gamma_{AB}(\Delta x_A + v_{AB}\Delta t_A)\\
+                &= \frac{13}{12}(-L + \frac{5c}{13}\frac{5L}{c}) \\
+                &= \frac{13}{12}(\frac{12}{13}L) = L \\
+            \Delta t_B &= \gamma_{AB} (\Delta t_A + v_{AB}\Delta x_A/c^2)\\
+                &= \frac{13}{12}(\frac{5L}{c} - \frac{5c}{13}\frac{L}{c^2}) \\
+                &= \frac{13}{12}(\frac{60}{13}\frac{L}{c}) = \frac{5L}{c}
+        \end{align*}
+\cleardoublepage
+        From frame $A$ with $\Delta t_A$ and $\Delta x_A$ we calculate $\Delta t_C$ and
+        $\Delta x_C$ for frame $C$ as follows
+        \begin{align*}
+            \Delta x_C &= \gamma_{AC}(\Delta x_A + v_{AC}\Delta t_A)\\
+                &= \frac{5}{3}(-L + \frac{4c}{5}\frac{5L}{c}) \\
+                &= \frac{5}{3}(3L) = 5L \\
+            \Delta t_C &= \gamma_{AC} (\Delta t_A + v_{AC}\Delta x_A/c^2)\\
+                &= \frac{5}{3}(\frac{5L}{c} - \frac{4c}{5}\frac{L}{c^2}) \\
+                &= \frac{5}{3}(\frac{21}{3}\frac{L}{c}) = \frac{7L}{c}
+        \end{align*}
+        From frame $A$ with $\Delta t_A$ and $\Delta x_A$ we calculate $\Delta t_D$ and
+        $\Delta x_D$ for frame $D$ as follows
+        \begin{align*}
+            \Delta x_D &= \gamma_{AD}(\Delta x_A + v_{AD}\Delta t_A)\\
+                &= \frac{5}{2\sqrt{6}}(-L + \frac{c}{5}\frac{5L}{c}) \\
+                &= \frac{5}{2\sqrt{6}} \cdot 0 = 0 \\
+            \Delta t_D &= \gamma_{AD} (\Delta t_A + v_{AD}\Delta x_A/c^2)\\
+                &= \frac{5}{2\sqrt{6}}(\frac{5L}{c} - \frac{c}{5}\frac{L}{c^2}) \\
+                &= \frac{5}{2\sqrt{6}}(\frac{24}{5}\frac{L}{c}) = \frac{2\sqrt{6}L}{c}
+        \end{align*}
+        From frame $B$ with $\Delta t_B$ and $\Delta x_B$ we calculate $\Delta t_C$ and
+        $\Delta x_C$ for frame $C$ as follows
+        \begin{align*}
+            \Delta x_C &= \gamma_{BC}(\Delta x_B + v_{BC}\Delta t_B)\\
+                &= \frac{5}{4}(L + \frac{3c}{5}\frac{5L}{c}) \\
+                &= \frac{5}{4}(4L) = 5L \\
+            \Delta t_C &= \gamma_{BC} (\Delta t_B + v_{BC}\Delta x_B/c^2)\\
+                &= \frac{5}{4}(\frac{5L}{c} + \frac{3c}{5}\frac{L}{c^2}) \\
+                &= \frac{5}{4}(\frac{28}{5}\frac{L}{c}) = \frac{7L}{c}
+        \end{align*}
+\cleardoublepage
+        From frame $B$ with $\Delta t_B$ and $\Delta x_B$ we calculate $\Delta t_D$ and
+        $\Delta x_D$ for frame $D$ taking into account that in this case $B$ moves
+        to the left so the sign of the second term is negative then 
+        \begin{align*}
+            \Delta x_D &= \gamma_{BD}(\Delta x_B - v_{BD}\Delta t_B)\\
+                &= \frac{5}{2\sqrt{6}}(L - \frac{c}{5}\frac{5L}{c}) \\
+                &= \frac{5}{2\sqrt{6}} \cdot 0 = 0 \\
+            \Delta t_D &= \gamma_{BD} (\Delta t_B - v_{BD}\Delta x_B/c^2)\\
+                &= \frac{5}{2\sqrt{6}}(\frac{5L}{c} - \frac{c}{5}\frac{L}{c^2}) \\
+                &= \frac{5}{2\sqrt{6}}(\frac{24}{5}\frac{L}{c}) = \frac{2\sqrt{6}L}{c}
+        \end{align*}
+        From frame $C$ with $\Delta t_C$ and $\Delta x_C$ we calculate $\Delta t_D$ and
+        $\Delta x_D$ for frame $D$ taking into account that in this case $C$ moves
+        to the left so the sign of the second term is negative then 
+        \begin{align*}
+            \Delta x_D &= \gamma_{CD}(\Delta x_C - v_{CD}\Delta t_C)\\
+                &= \frac{7}{2\sqrt{6}}(5L - \frac{5c}{7}\frac{7L}{c}) \\
+                &= \frac{7}{2\sqrt{6}} \cdot 0 = 0 \\
+            \Delta t_D &= \gamma_{CD} (\Delta t_C - v_{CD}\Delta x_C/c^2)\\
+                &= \frac{7}{2\sqrt{6}}(\frac{7L}{c} - \frac{5c}{7}\frac{5L}{c^2}) \\
+                &= \frac{7}{2\sqrt{6}}(\frac{24}{7}\frac{L}{c}) = \frac{2\sqrt{6}L}{c}
+        \end{align*}
+    \end{proof}
+\cleardoublepage
+	\begin{proof}{\textbf{2.16}}
+        Let us have two events which are the photon passing through the origin of
+        $S'$ and another one which is the photon passing through a point $A$ at a distance
+        $\Delta x'$ from the origin. Between this two events $\Delta t'$ time passes 
+        and we know the velocity of the photon must be $c$ in $S'$ so we have that
+        $$\frac{\Delta x'}{\Delta t'} = c$$
+        Now by the Lorentz Transformations we can compute $\Delta x$ and 
+        $\Delta t$ for the $S$ frame but we are interested in the velocity of the
+        photon in the $S$ frame so we actually want to calculate 
+        $\frac{\Delta x}{\Delta t}$ then we have that
+        \begin{align*}
+            \frac{\Delta x}{\Delta t} &= \frac{\gamma(\Delta x' + v\Delta t')}{\gamma(\Delta t' + v\Delta x'/c^2)}\\
+                &= \frac{\Delta x'(1 + v\frac{\Delta t'}{\Delta x'})}{\Delta t'(1 + \frac{v\Delta x'}{c^2\Delta t'})}\\
+                &= \frac{\Delta x'(1 + \frac{v}{c})}{\Delta t'(1 + \frac{v}{c})}\\
+                &= \frac{\Delta x'}{\Delta t'} = c
+        \end{align*} 
+    \end{proof}
+	\begin{proof}{\textbf{2.17}}
+        Let us suppose we have a set of transformations from $S'$ to $S$ as follows
+        \begin{align*}
+            \Delta x &= \gamma_{v_1} (\Delta x' + v_1\Delta t')\\
+            \Delta t &= \gamma_{v_1} (\Delta t' + v_1\Delta x'/c^2)
+        \end{align*}
+        And another set from $S''$ to $S'$
+        \begin{align*}
+            \Delta x' &= \gamma_{v_2} (\Delta x'' + v_2\Delta t'')\\
+            \Delta t' &= \gamma_{v_2} (\Delta t'' + v_2\Delta x''/c^2)
+        \end{align*}
+        We want to find a set of transformations from $S''$ to $S$ then by replacing
+        values we have that
+        \begin{align*}
+            \Delta x &= \gamma_{v_1} (\gamma_{v_2} (\Delta x'' + v_2\Delta t'')
+                + v_1(\gamma_{v_2} (\Delta t'' + v_2\Delta x''/c^2)))\\
+                &= \gamma_{v_1} \gamma_{v_2}(\Delta x'' + v_2\Delta t''
+                + v_1\Delta t'' + v_1v_2\Delta x''/c^2))\\
+                &= \gamma_{v_1} \gamma_{v_2}(\Delta x''(1 + \frac{v_1v_2}{c^2}) + 
+                \Delta t'' (v_1 + v_2))\\
+                &= \gamma_{v_1} \gamma_{v_2}(1 + \frac{v_1v_2}{c^2})(\Delta x''
+                + \frac{v_1 + v_2}{1 + v_1v_2/c^2}\Delta t'')
+        \end{align*}
+        Let us now verify that if $v_3 = \frac{v_1 + v_2}{1 + v_1v_2/c^2}$ then 
+        $\gamma_{v_3} = \gamma_{v_1} \gamma_{v_2}(1 + \frac{v_1v_2}{c^2})$ as follows
+        \begin{align*}
+            \gamma_{v_3} &= \frac{1 + \frac{v_1v_2}{c^2}}{
+                \sqrt{1-\frac{v_1^2}{c^2}}\sqrt{1-\frac{v_2^2}{c^2}}}\\
+                &= \sqrt{\frac{(1 + \frac{v_1v_2}{c^2})^2}{
+                (1-\frac{v_1^2}{c^2})(1-\frac{v_2^2}{c^2})}}\\
+                &= \sqrt\frac{1 + \frac{2v_1v_2}{c^2} + \frac{v_1^2v_2^2}{c^4}}{
+                1 - \frac{v_1^2}{c^2} - \frac{v_2^2}{c^2} + \frac{v_2^2v_1^2}{c^4}}\\
+                &= \sqrt\frac{c^2 + 2v_1v_2 + \frac{v_1^2v_2^2}{c^2}}{
+                c^2 - v_1^2 - v_2^2 + \frac{v_2^2v_1^2}{c^2}}\\
+                &= \sqrt\frac{1}{\frac{c^2 - v_1^2 +2v_1v_2 -2v_1v_2- v_2^2 + \frac{v_2^2v_1^2}{c^2}}{
+                c^2 + 2v_1v_2 + \frac{v_1^2v_2^2}{c^2}}}\\
+                &= \sqrt\frac{1}{1 - \frac{v_1^2 +2v_1v_2+ v_2^2}{
+                c^2 + 2v_1v_2 + \frac{v_1^2v_2^2}{c^2}}}\\
+                &= \sqrt\frac{1}{1 - \frac{(v_1 + v_2)^2}{
+                c^2(1 + 2v_1v_2/c^2 + v_1^2v_2^2/c^4)}}\\
+                &= \sqrt\frac{1}{1 - \frac{(v_1 + v_2)^2}{
+                c^2(1 + v_1v_2/c^2)^2}} = \frac{1}{\sqrt{1 - \frac{v_3^2}{c^2}}}\\
+        \end{align*}
+        What's left is finding the transformation for $\Delta t$ so by replacing we
+        have that
+        \begin{align*}
+            \Delta t &= \gamma_{v_1} (\gamma_{v_2} (\Delta t'' + v_2\Delta x''/c^2) +
+             v_1(\gamma_{v_2} (\Delta x'' + v_2\Delta t''))/c^2)\\
+             &= \gamma_{v_1} \gamma_{v_2} (\Delta t'' + v_2\Delta x''/c^2 +
+             v_1\Delta x''/c^2 + v_1v_2\Delta t''/c^2)\\
+             &= \gamma_{v_1} \gamma_{v_2} (\Delta t''(1 + v_1v_2/c^2) +
+             (v_2 + v_1)/c^2 \Delta x'')\\
+             &= \gamma_{v_1} \gamma_{v_2} (1 + v_1v_2/c^2) (\Delta t''
+             + \frac{v_1+v_2}{1 + v_1v_2/c^2}\frac{\Delta x''}{c^2})\\
+             &= \gamma_{v_3}(\Delta t'' + \frac{v_3}{c^2}\Delta x'')
+        \end{align*}
+    \end{proof}
+\cleardoublepage
+	\begin{proof}{\textbf{2.18}}
+        \begin{itemize}
+            \item[(a)]
+            We want to compute the distance between the two events from the ground
+            using the Lorentz Transformations then if $L'$ is the distance seen from the
+            gound frame we have that
+            $$L' = \gamma(L + vt)$$
+            and since we have that $t = 0$ then we have that $L'= \gamma L$
+
+            Now in the ground frame we have by the Lorentz Transformations that 
+            $$t' = \gamma (t + vL/c^2)$$
+            and since the measurement in the train frame happen simultaneously we have
+            that $t = 0$ and therefore $t' = \gamma vL/c^2$
+            \item [(b)]
+            About the time measured between the two events on the ground frame
+            let us assume that both events have a clock attached to it and both 
+            happen when $t=0$ in the train frame but
+            since this two events are not simultaneous in the ground frame, because of
+            the rear clock ahead effect we have that when the left event happen at
+            $t' = 0$ in the ground frame the right clock is showing $-Lv/c^2$ time,
+            so the events will happen with a time interval of $Lv/c^2$ and also we see
+            this clock running slower by a factor $\gamma$ then the real time between
+            events is $\gamma Lv/c^2$.
+
+            About the length we see from the ground frame we have that the length of the
+            train is length contracted and as we know the two events are not
+            simultaneous on the ground frame then we need to add the distance that
+            accounts for this, so we have that
+            \begin{align*}
+                L' &= L/\gamma + \gamma Lv^2/c^2\\
+                    &= \gamma L (\frac{1}{\gamma^2} + \frac{v^2}{c^2})\\
+                    &= \gamma L ((1 - \frac{v^2}{c^2}) + \frac{v^2}{c^2})\\
+                    &= \gamma L
+            \end{align*}
+            
+            For the train frame, let us suppose that there are two people on the ground
+            and the train sees them at each event, simultaneous for the train then
+            the distance the train sees between the two people is $L = L' / \gamma$
+            because of the length contraction which means that $L' = \gamma L$
+
+            Now about the time we have that in the train frame both events happen
+            simultaneously at $t=0$ but if we see the watch of the person on the right
+            (the ground is moving leftward from the train perspective)
+            at the moment the two events happen in the train frame we see that the watch
+            is showing $Lv/c^2$ because of the rear clock ahead effect and in addition
+            to that we see the watch moving slower because of the time dilation effect
+            therefore the time between the two events in the ground frame as seen
+            from the train frame is $\gamma Lv/c^2$.
+        \end{itemize}
+    \end{proof}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
