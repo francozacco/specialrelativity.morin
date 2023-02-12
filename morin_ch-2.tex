@@ -117,6 +117,234 @@
                 &= \frac{7}{2\sqrt{6}}(\frac{24}{7}\frac{L}{c}) = \frac{2\sqrt{6}L}{c}
         \end{align*}
     \end{proof}
+
+\cleardoublepage
+    \begin{proof}{\textbf{2.2}}
+        Since the photon is moving vertically and you are moving to the left with a speed
+        $v$ with respect to the ground then from your frame and using the velocity
+        addition formula the photon is moving with the following velocities
+        \begin{align*}
+            u_x = \frac{0 + v}{1 + 0} = v \quad\quad\quad\quad
+            u_y = \frac{c}{\gamma_v(1 + 0)} = \frac{c}{\gamma_{v}}
+        \end{align*}
+        If we want that the photon travels $45^{\circ}$ rightward and upward from your
+        frame then the velocities $u_x$ and $u_y$ must be equal, then
+        \begin{align*}
+            v &= \frac{c}{\gamma_v}\\
+            \frac{v^2}{c^2} &= 1 - \frac{v^2}{c^2}\\
+            v^2 &= \frac{c^2}{2}
+        \end{align*}
+        Therefore $v = \frac{1}{\sqrt{2}}c$
+    \end{proof}
+	\begin{proof}{\textbf{2.3}}
+        Let us have a frame $S'$ which is travelling along the dotted line with the speed
+        $v \cos\theta$ measured from the lab frame ($S$) in the particle's opposite
+        $x$ direction. Then to change from $S'$ to $S$ we need to use the following Lorentz
+        factor
+        $$\gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}\cos^2\theta}}$$
+        Now, seen from the frame $S'$ the particles are actually travelling upward and
+        downward. So seen from the lab's frame ($S$) we have that
+        $$v\sin\theta = u_y = \frac{u_y'}{\gamma(1 + 0)} = \frac{u_y'}{\gamma}$$
+        Therefore in $S'$ each particle moves with velocity
+        $$u_y' = \gamma v\sin\theta = \frac{v\sin\theta}{\sqrt{1 - \frac{v^2}{c^2}\cos^2\theta}}$$
+        Finally, seen from the particle's frame the other particle is travelling in the
+        opposite direction along the $y$ direction therefore
+        \begin{align*}
+            V &= \frac{u_y' + u_y'}{1 + u_y'^2/c^2}\\
+              &=\frac{\frac{2v\sin\theta}{\sqrt{1 - \frac{v^2}{c^2}\cos^2\theta}}}
+              {1 + \frac{v^2\sin^2\theta}{c^2 - v^2\cos^2\theta}}\\
+              &= \frac{\frac{2v\sin\theta\sqrt{1 - \frac{v^2}{c^2}\cos^2\theta}}{1 - \frac{v^2}{c^2}\cos^2\theta}}
+              {\frac{c^2 - v^2\cos^2\theta + v^2\sin^2\theta}{c^2(1 - \frac{v^2}{c^2}\cos^2\theta)}}\\
+              &= \frac{2v\sin\theta\sqrt{1 - \frac{v^2}{c^2}\cos^2\theta}}
+              {1 - \frac{v^2}{c^2}\cos 2\theta}
+        \end{align*}
+    \end{proof}
+    \begin{proof}{\textbf{2.6}}
+        \begin{itemize}
+            \item [(a)] From $A$'s frame the ground is moving in westward as $B$ so by
+            using the velocity addition formula we have that $A$ sees $B$ travelling
+            with a velocity
+            $$V = \frac{2v}{1 + v^2/c^2}$$
+            Also from $A$'s point of view the train is length contracted by $2L/\gamma_V$.
+            Where $\gamma_V$ is 
+            \begin{align*}
+                \gamma_V &= \frac{c}{\sqrt{c^2 - V^2}}
+                    = \frac{c}{\sqrt{c^2 - (\frac{2v}{1 + v^2/c^2})^2}}\\
+                    &= \frac{c}{\sqrt{c^2 - \frac{(2vc^2)^2}{(c^2 + v^2)^2}}}
+                    = \frac{1}{\sqrt{1 - \frac{(2vc)^2}{(c^2 + v^2)^2}}}\\
+                    &= \frac{1}{\sqrt{\frac{(c^2+v^2)^2 - (2vc)^2}{(c^2 + v^2)^2}}}
+                    = \frac{c^2 + v^2}{\sqrt{((c^2)^2+2c^2v^2+(v^2)^2)^2 - (2vc)^2}}\\
+                    &= \frac{c^2 + v^2}{c^2 -v^2}
+                \end{align*}
+            so the time it takes for the trains to pass is $(L + (2L/\gamma_V))/V$
+            \begin{align*}
+                \Delta t_A &= \frac{L + 2L(\frac{1 - v^2/c^2}{1 + v^2/c^2})}
+                {\frac{2v}{1 + v^2/c^2}}\\
+                \Delta t_A &= \frac{L((1 + v^2/c^2) + 2(1 - v^2/c^2))}{2v}\\
+                \Delta t_A &= \frac{L(3 - v^2/c^2)}{2v}
+            \end{align*}
+            \item [(b)] From $B$'s frame the ground is moving in eastward as $A$ so by
+            using the velocity addition formula we have that $B$ sees $A$ travelling
+            with a velocity
+            $$V = \frac{2v}{1 + v^2/c^2}$$
+            Also from $B$'s point of view the train is length contracted by $L/\gamma_V$.
+            Where $\gamma_V$ as before is 
+            \begin{align*}
+                \gamma_V &= \frac{c^2 + v^2}{c^2 -v^2}
+                \end{align*}
+            so the time it takes for the trains to pass is $(2L + (L/\gamma_V))/V$
+            \begin{align*}
+                \Delta t_B &= \frac{2L + L(\frac{1 - v^2/c^2}{1 + v^2/c^2})}
+                {\frac{2v}{1 + v^2/c^2}}\\
+                \Delta t_B &= \frac{L(2(1 + v^2/c^2) + (1 - v^2/c^2))}{2v}\\
+                \Delta t_B &= \frac{L(3 + v^2/c^2)}{2v}
+            \end{align*}
+            \item [(c)] In the ground frame we see both trains approaching with velocity
+            $2v$ but also we see them length contracted by $L/\gamma_v$ and $2L/\gamma_v$
+            respectively then the time it takes for the trains to pass is given by
+            \begin{align*}
+                \Delta t_g &= \frac{L/\gamma_v + 2L/\gamma_v}{2v}\\
+                \Delta t_g &= \frac{3L\sqrt{1 - v^2/c^2}}{2v}\\
+            \end{align*}
+            \item [(d)] Let us now check that all the invariant intervals are the same.
+            In $A$'s frame we have that
+            \begin{align*}
+                c^2\Delta t_A^2 - \Delta x^2 &= \frac{c^2L^2(3 - v^2/c^2)^2}{(2v)^2} - L^2\\
+                    &= L^2(\frac{9c^2 - 6v^2 + v^4/c^2}{(2v)^2} - 1)\\
+                    &= \frac{L^2}{4v^2}(9c^2 - 10v^2 + v^4/c^2)
+            \end{align*}
+            In $B$'s frame we have that
+            \begin{align*}
+                c^2\Delta t_B^2 - \Delta x^2 &= \frac{c^2L^2(3 + v^2/c^2)^2}{(2v)^2} - 4L^2\\
+                    &= L^2(\frac{9c^2 + 6v^2 + v^4/c^2}{(2v)^2} - 4)\\
+                    &= \frac{L^2}{4v^2}(9c^2 - 10v^2 + v^4/c^2)
+            \end{align*}
+            And finally in the ground's frame we have to determine first $\Delta x$
+            since both trains travel with the same velocity in opposite direction the
+            back of each train should meet in the middle of the entire length measured
+            from the ground i.e. $(3L/\gamma_v)/2$ but also we need to subtract the
+            length of train $A$ since we measure starting from the moment both fronts
+            meet. Therefore 
+            \begin{align*}
+                c^2\Delta t_g^2 - \Delta x^2 &= \frac{c^23^2L^2(1 - v^2/c^2)}{(2v)^2} -
+                    \left(\frac{L}{2}\sqrt{1-\frac{v^2}{c^2}}\right)^2\\
+                    &= L^2\left(\frac{9c^2-9v^2}{(2v)^2} - 
+                    (\frac{1}{4}-\frac{1}{4}\frac{v^2}{c^2})\right)\\
+                    &= \frac{L^2}{4v^2}(9c^2 -10v^2 + \frac{v^4}{c^2})
+            \end{align*}
+            
+        \end{itemize}       
+    \end{proof}
+    \begin{proof}{\textbf{2.8}}
+        We know that the first event happens at $(x,t) = (0,0)$ and the the next event
+        happens at $(x,t) = (2,1)$. Let us have another frame $S'$ where the
+        worldline $x'$ passes through the point $(x,t) = (2,1)$ which implies that the
+        two events happen simultaneously in $S'$. The angle between $x$ and $x'$ is
+        given by
+        $$\tan\theta = 1/2 = \beta = v/c$$
+        Therefore our new frame $S'$ must be travelling with a velocity $v = c/2$.
+         
+    \end{proof}
+    \begin{proof}{\textbf{2.9}}
+        All the points in the hyperbola must satisfy that $c^2t^2 - x^2= 1$ and because
+        of the invariant interval the points should also satisfy that
+        $c^2t'^2 - x'^2= 1$. This means that the point where the $ct'$ line encounters
+        the hyperbola should also satisfy this constraint that we know is a point where
+        $x' = 0$ so this is a point where $ct' = 1$ (a unit value).
+        
+        On the other hand, we have that $\tan \theta_1 = \beta = x/ct$ therefore
+        $x= \beta \cdot ct$ and replacing this value in the hyperbola equation we get
+        that
+        \begin{align*}
+            c^2t^2 - \beta^2c^2t^2 &= 1\\
+            ct\sqrt{1 - \beta^2} &= 1
+        \end{align*} 
+        Also, we have that the point where the hyperbola joins the line $ct'$ (a unit
+        value on $ct'$) is at a distance
+        $\sqrt{c^2t^2 + x^2} = \sqrt{c^2t^2 + (\beta ct)^2}$ from the origin,
+        then we have that 
+        \begin{align*}
+            \sqrt{c^2t^2 + (\beta ct)^2} &= ct\sqrt{1 + \beta^2} 
+            = \sqrt{\frac{1 + \beta^2}{1 - \beta^2}}
+        \end{align*}
+        Therefore this is the length on the paper that one unit on the $ct'$ axis has
+        and also since we are taking that one unit on the $ct$ has a length of 1 in the
+        paper this is also the ratio between one unit in the $ct'$ axis and one
+        unit on the $ct$ axis.
+    \end{proof}
+	\begin{proof}{\textbf{2.13}}
+        An observer on the initial inertial frame will see $d$ as the string
+        length which is the length contracted proper distance $d'$ seen from the
+        spaceships i.e.
+        $$d = d'/\gamma$$
+        Then, this means that the proper length of the string we see from a spaceship is
+        $d' = \gamma d$. Since $\gamma = 1/\sqrt{1 - v^2/c^2}$ when the velocity
+        increase due to the acceleration, $\gamma$ increases, therefore, $d'$
+        measured from a spaceship increases which means that the string ends up breaking.
+    \end{proof}
+	\begin{proof}{\textbf{2.14}}
+        Let us have two Lorentz transformations where in the first one we transform $x$
+        and $ct$ to $x'$ and $ct'$ assuming $v_1 = \tanh\phi_1$ and in the second one
+        we transform $x'$ and $ct'$ to $x''$ and $ct''$ assuming $v_2 = \tanh\phi_2$ 
+        then we have the following set of equations.
+        \begin{align*}
+            x &= x'\cosh\phi_1 + ct'\sinh\phi_1\\
+            ct &= x'\sinh\phi_1 + ct'\cosh\phi_1
+        \end{align*}
+        And for the second transformation, we have that
+        \begin{align*}
+            x' &= x''\cosh\phi_2 + ct''\sinh\phi_2\\
+            ct' &= x''\sinh\phi_2 + ct''\cosh\phi_2
+        \end{align*}
+        Then if we want to transform directly from $x$ to $x''$ we replace variables
+        such that we have
+        \begin{align*}
+            x &= (x''\cosh\phi_2 + ct''\sinh\phi_2)\cosh\phi_1 +
+            (x''\sinh\phi_2 + ct''\cosh\phi_2)\sinh\phi_1\\
+            x &= x''\cosh\phi_2\cosh\phi_1 + ct''\sinh\phi_2\cosh\phi_1 +
+            x''\sinh\phi_2\sinh\phi_1 + ct''\cosh\phi_2\sinh\phi_1\\
+            x &= x''(\cosh\phi_2\cosh\phi_1 + \sinh\phi_2\sinh\phi_1) +
+            ct''(\sinh\phi_2\cosh\phi_1 + \cosh\phi_2\sinh\phi_1)\\
+            x &= x''\cosh(\phi_1 + \phi_2) + ct''\sinh(\phi_1 + \phi_2)
+        \end{align*}
+        Where we used that $\cosh(\phi_1 + \phi_2) = \cosh\phi_2\cosh\phi_1 + \sinh\phi_2\sinh\phi_1$
+        and that $\sinh(\phi_1 + \phi_2) = \sinh\phi_2\cosh\phi_1 + \cosh\phi_2\sinh\phi_1$
+
+        In the same way, we calculate the same to transform from $ct$ to $ct''$ as
+        follows
+        \begin{align*}
+            ct &= (x''\cosh\phi_2 + ct''\sinh\phi_2)\sinh\phi_1 +
+            (x''\sinh\phi_2 + ct''\cosh\phi_2)\cosh\phi_1\\
+            ct &= x''\cosh\phi_2\sinh\phi_1 + ct''\sinh\phi_2\sinh\phi_1 +
+            x''\sinh\phi_2\cosh\phi_1 + ct''\cosh\phi_2\cosh\phi_1\\
+            ct &= x''(\cosh\phi_2\sinh\phi_1 + \sinh\phi_2\cosh\phi_1) +
+            ct''(\sinh\phi_2\sinh\phi_1 + \cosh\phi_2\cosh\phi_1)\\
+            ct &= x''\sinh(\phi_1 + \phi_2) + ct''\cosh(\phi_1 + \phi_2)
+        \end{align*}
+        Therefore we see that applying twice the Lorentz transformation gives us the same
+        result as applying one Lorentz transformation with a velocity\\
+        $v = \tanh(\phi_1 + \phi_2)$.
+    \end{proof}
+\cleardoublepage
+	\begin{proof}{\textbf{2.15}}
+        From the equation $2.53$ we know that the velocity in terms of the time $t'$ of
+        the spaceship is given by
+        \begin{align*}
+            \beta(t') = \tanh(at'/c)
+        \end{align*}
+        And we know that in the lab frame we see a clock in the spaceship running slow
+        so we have that
+        \begin{align*}
+            dt &= \gamma dt' = \frac{dt'}{\sqrt{1-\beta^2}}\\
+            \int_0^t dt &= \int_0^{t'} \frac{dt'}{\sqrt{1-\beta^2}} \\
+            t &= \int_0^{t'} \cosh(at'/c)~dt'\\
+            t &= \frac{c}{a}\sinh\left(\frac{at'}{c}\right)\\
+        \end{align*}
+        Where we used that $1/\sqrt{1-\tanh(x)^2} = \cosh(x)$.
+    \end{proof}
+
+
+
 \cleardoublepage
 	\begin{proof}{\textbf{2.16}}
         Let us have two events which are the photon passing through the origin of
@@ -243,6 +471,220 @@
             from the train frame is $\gamma Lv/c^2$.
         \end{itemize}
     \end{proof}
+	\begin{proof}{\textbf{2.19}}
+        Let $S'$ be the frame in which the clock moves vertically, so seen from our
+        frame, $S$, the frame $S'$ is moving horizontally and therefore from the velocity
+        addition formula in the y direction we have that
+        $$u_y = \frac{u}{\gamma_{v}(1 + 0)} = \frac{u}{\gamma_v}$$
+        Where we used that $u_y' = u$ and that $u_x' = 0$. Then we have that
+        \begin{align*}
+            u_y = \frac{\Delta y}{\Delta t} &= \frac{u}{\gamma_v}\\
+            \Delta t &= \gamma_v \frac{\Delta y}{u}\\
+            \Delta t &= \gamma_v \gamma_u \frac{\Delta y'}{u}\\
+            \Delta t &= \gamma_v \gamma_u \Delta t'\\
+        \end{align*}
+        Here we used that $\Delta y = \Delta y' \gamma_u$ because of the length
+        contraction and that $\Delta t' = \Delta y' / u$. Therefore the time we see
+        is slowed by a factor $\gamma_v \gamma_u$.
+    \end{proof}
+	\begin{proof}{\textbf{2.20}}
+        Let $S'$ be the train frame, and let $S$ be the ground frame. Then we can
+        calculate the x and y photon's velocities seen from $S$ using the velocity
+        addition formulas as follows
+        \begin{align*}
+            u_x = \frac{c/\sqrt{2} - c/\sqrt{2}}{1 - c^2/2c^2} = 0
+        \end{align*}
+        Here we used that $u_x' = -c/\sqrt{2}$ because the photon is moving leftward and
+        $v = c/\sqrt{2}$ because $S'$ is moving rightward. And for the y component we
+        have that
+        \begin{align*}
+            u_y &= \frac{c/\sqrt{2}}{\gamma_{c/\sqrt{2}}(1 - c^2/2c^2)}\\
+                &= \frac{2c}{\sqrt{2} \gamma_{c/\sqrt{2}}}\\
+                &= \frac{2c\sqrt{1-c^2/2c^2}}{\sqrt{2}}\\
+                &= \frac{2c}{\sqrt{2}\sqrt{2}} = c
+        \end{align*}
+        Finally, these results make sense because given that the train is travelling the
+        opposite way we see that the photon is travelling only vertically i.e. $u_x = 0$.
+        Also, the velocity we see in the vertical direction is $c$ which is coherent
+        with the fact that the velocity of the light should be the same in any reference
+        frame.    
+    \end{proof}
+	\begin{proof}{\textbf{2.22}}
+        \begin{itemize}
+            \item [(i)] For the person $A$ standing on the ground the velocity between
+            the train and the person is $c/5$ since we already have both velocities
+            measured in the ground frame. Since we see the length of the train length
+            contracted then the distance between the two events is $L/\gamma$. Then
+            the time between the two events is
+            $$\Delta t_A = \frac{5L}{c\gamma_{3c/5}} = \frac{4L}{c}$$
+            Now the train $B$ will travel for a time $4L/c$ with a velocity of
+            $3c/5$ so it will cover a distance of $12L/5$, but this measurement
+            correspond to the distance travelled by the front of the train so we need to
+            add the length of the train (taking into account the length contraction
+            effect) i.e. $12L/5 + 4L/5 = 16L/5$. Therefore the invariant interval has a
+            value of
+            \begin{align*}
+                c^2\Delta t_A^2 - \Delta x_A^2 = (4L)^2 - \frac{(16L)^2}{5^2}
+                =  \frac{144}{25}L^2
+            \end{align*}
+            \item [(ii)] For the train $B$ the ground is travelling to the left (opposite
+            to $C$) so by using the velocity addition formula we can calculate the
+            velocity at which $C$ is moving seen from $B$ i.e.
+            \begin{align*}
+                V = \frac{4c/5 - 3c/5}{1 - (3\cdot 4)/5^2} = \frac{5}{13}c 
+            \end{align*}
+            From here we can calculate the time between the two events as follows
+            \begin{align*}
+                \Delta t_B = \frac{L}{\frac{5}{13}c} = \frac{13L}{5c}
+            \end{align*}
+            Therefore the invariant interval is
+            \begin{align*}
+                c^2\Delta t_B^2 - \Delta x_B^2 &= (\frac{13L}{5})^2 - L^2\\
+                    &= L^2(\frac{169}{25} -1)\\
+                    &= \frac{144 L^2}{25}
+            \end{align*}
+            \item [(iii)] For the person $C$ the ground is travelling to the left
+            (opposite to $B$) so by using the velocity addition formula we can calculate
+            the velocity at which $B$ is moving seen from $C$ i.e.
+            \begin{align*}
+                V = \frac{3c/5 - 4c/5}{1 - (3\cdot 4)/5^2} = -\frac{5}{13}c 
+            \end{align*}
+            From here we can calculate the time between the two events as follows
+            \begin{align*}
+                \Delta t_C = \frac{L/\gamma_V}{\frac{5}{13}c} = \frac{12L}{5c}
+            \end{align*}
+            Where we used that $\gamma_V = \gamma_{5c/13} = 13/12$. Therefore the
+            invariant interval is
+            \begin{align*}
+                c^2\Delta t_C^2 - \Delta x_C^2 &= (\frac{12L}{5})^2 - 0\\
+                    &= L^2(\frac{144}{25})
+            \end{align*}
+            In this invariant interval the distance between the two events is 0 since
+            both happen at $C$ from $C$'s frame.
+        \end{itemize}
+    \end{proof}
+	\begin{proof}{\textbf{2.25}}
+        \begin{itemize}
+        \item [(a)] In the barn frame the events happen at a distance $\Delta x = L$.
+        To compute the time between events we must take into account that the first
+        event (seen from the barn frame) happens at the back of the pole and the other
+        event happens at the front of the pole, therefore we subract the distance of the
+        barn $L$ from the distance of the pole which is length contracted to $L/\gamma$
+        then we calculate the following
+        \begin{align*}
+            \Delta t &= \frac{L - L/\gamma_{3/5}}{3c/5}\\
+                &= \frac{L/5}{3c/5}\\
+                &= \frac{L}{3c}
+        \end{align*}
+        \item [(b)] In the Minkowsky diagram we see that $E_2$ being "the front of the
+        pole passing the right end of the barn" is happening before $E_1$ being
+        "the back of the pole passing the left end of the barn" seen from the pole
+        frame, then we can find a frame where the
+        $\Delta x'$ axis passes through $E_2$ with coordinates $(L, L/3)$, meaning
+        that $E_1$ and $E_2$ would happen simultaneously from this frame, then our
+        new $\Delta x'$ axis must have an inclination of 
+        \begin{align*}
+            \tan \theta = \frac{c\Delta t}{\Delta x} = \frac{L/3}{L} = \frac{1}{3}
+        \end{align*}
+        The axis in the pole frame has an inclination of
+        $\theta = \arctan(3/5) = 30.96^{\circ}$
+        which is bigger than the inclination we get for the axis in this new frame
+        $\theta = \arctan(1/3) = 18.43^{\circ}$ as we wanted.
+        \end{itemize}
+    \end{proof}
+\cleardoublepage
+	\begin{proof}{\textbf{2.30}}
+        \begin{itemize}
+        \item [(a)] If we imagine a stationary observer C between A and B, C will see
+        the flashes from A with a frequency given by the equation we have
+        \begin{align*}
+            f_C = \sqrt{\frac{1+\beta}{1-\beta}}~f_A
+        \end{align*} 
+        where in this case $f_A$ is the frequency A says he is sending the flashes from
+        its frame. But since C is re-sending the flashes instantaneously then B will
+        see the flashes with a frequency of
+        $$f_B = \sqrt{\frac{1+\beta}{1-\beta}}~f_C$$ 
+        Therefore in terms of $f_A$ we have that the frequency that B sees is given by
+        $$f_B = \frac{1+\beta}{1-\beta}~f_A$$
+
+        \item [(b)] In this case B sees A travelling at a velocity $V$ given by the 
+        relativistic sum of velocities i.e.
+        \begin{align*}
+            V = \frac{2v}{1+v^2/c^2}
+        \end{align*}
+        Then from the frequency equation which applies in this case too, we have that
+        \begin{align*}
+            f_B &= \sqrt{\frac{1 + \frac{V}{c}}{1 - \frac{V}{c}}}~f_A\\
+            f_B &= \sqrt{\frac{1 + \frac{2v}{c(1+v^2/c^2)}}{1 - \frac{2v}{c(1+v^2/c^2)}}}~f_A\\
+            f_B &= \sqrt{\frac{\frac{c(1+v^2/c^2 + 2v/c)}{c(1+v^2/c^2)}}
+            {\frac{c(1+v^2/c^2 - 2v/c)}{c(1+v^2/c^2)}}}~f_A\\
+            f_B &= \sqrt{\frac{(1+v/c)^2}{(1-v/c)^2}}~f_A\\
+            f_B &= \frac{1+\beta}{1 - \beta}~f_A
+        \end{align*}
+        Which is the same result we obtained the other way.
+        \end{itemize}
+    \end{proof}
+\cleardoublepage
+	\begin{proof}{\textbf{2.34}}
+        \begin{itemize}
+            \item [(a)] From the time equation we got from (2.15) and the velocity
+            equation (2.53) we have that
+            \begin{align*}
+                t' &= \frac{c}{a}\sinh^{-1}\left(\frac{at}{c}\right)\\
+                v(t') &= c\tanh(\frac{at'}{c})
+            \end{align*}
+            By replacing variables we have that
+            \begin{align*}
+                v(t) &= c\tanh(\sinh^{-1}\left(\frac{at}{c}\right))\\
+                v(t) &= \frac{at}{\sqrt{(at/c)^2 + 1}}
+            \end{align*}
+            Since we know $v(t) = dL/dt$ we can integrate to obtain $L$ as a function
+            of $t$ as follows
+            \begin{align*}
+                L &= c\int_0^t \frac{at/c}{\sqrt{(at/c)^2 + 1}} dt\\
+                L &= c\left[\frac{c}{a}\sqrt{\left(\frac{at}{c}\right)^2 + 1} - \frac{c}{a}\right]\\
+                \left(\frac{aL}{c^2} + 1\right)^2 - 1 &= \left(\frac{at}{c}\right)^2 \\
+                \left(\frac{at}{c}\right)^2 &= \frac{a^2L^2}{c^4} + \frac{2aL}{c^2}\\
+                t^2 &= \frac{c^2}{a^2}\left(\frac{a^2L^2}{c^4} + \frac{2aL}{c^2}\right) \\
+                t &= \sqrt{\frac{L^2}{c^2} + \frac{2L}{a}}\\
+                t &= \frac{L}{c}\sqrt{1 + \frac{2c^2/a}{L}}
+            \end{align*}
+            If $L \to 0$ then $L^2/c^2$ is negligible so we have that 
+            \begin{align*}
+                t &= \sqrt{\frac{2L}{a}}\\
+                L &=\frac{1}{2}at^2
+            \end{align*}
+            Where we have here the known formula for $L$ used in the non-relativistic
+            theory.\\
+            If $L \to \infty$ we have that $\frac{2c^2/a}{L}$ is negligible then we get
+            $$t = \frac{L}{c}$$
+            \item [(b)] From part (a) we have an expression of $t'$ in terms of $t$ so
+            we can replace this value with the expression we found in terms of $L$
+            as follows
+            \begin{align*}
+                t' &= \frac{c}{a}\sinh^{-1}\left(\frac{at}{c}\right)\\
+                t' &= \frac{c}{a}\sinh^{-1}\left(\frac{a}{c}\sqrt{\frac{L^2}{c^2} + \frac{2L}{a}}\right)
+                % L' &= \int_0^{t'} v(t')~dt'\\
+                % L' &= \int_0^{t'} c\tanh(\frac{at'}{c})~dt'\\
+                % L' &= \frac{c^2}{a}\log(\cosh(\frac{at'}{c}))\\
+                % \frac{at'}{c} &= \cosh^{-1}(e^{\frac{aL'}{c^2}})\\
+                % t' &= \frac{c}{a}\cosh^{-1}(e^{\frac{aL'}{c^2}})
+            \end{align*}
+            If $L \to 0$ then $L^2/c^2$ is negligible so we have that
+            \begin{align*}
+                t' &= \frac{c}{a}\sinh^{-1}\left(\sqrt{\frac{2La}{c^2}}\right)\\
+                t' &= \frac{c}{a}\sqrt{\frac{2La}{c^2}}\\
+                t' &= \sqrt{\frac{2L}{a}}\\
+                L &= \frac{1}{2}a{t'}^{2}
+            \end{align*}
+            Here we used the fact that $\sinh^{-1}(x) \approx x$ when $x$ is small, and
+            we obtained the formula for $L$ used in non-relativistic theory again.\\
+            If $L \to \infty$ we have that $\frac{2c^2/a}{L}$ is negligible then we get
+            that
+            $$t' = \frac{c}{a}\sinh^{-1}\left(\frac{aL}{c^2}\right)$$
+        \end{itemize}
+    \end{proof}
+
 
 \end{document}
 
