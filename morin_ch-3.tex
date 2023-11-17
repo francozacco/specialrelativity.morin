@@ -1,0 +1,662 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+
+\title{\textbf{Solved selected problems of Special Relativity - Morin}}
+\author{Franco Zacco}
+\date{}
+
+\addtolength{\topmargin}{-3cm}
+\addtolength{\textheight}{3cm}
+
+\newcommand{\hatr}{\bm{\hat{r}}}
+\newcommand{\hatx}{\bm{\hat{x}}}
+\newcommand{\haty}{\bm{\hat{y}}}
+\newcommand{\hatz}{\bm{\hat{z}}}
+\newcommand{\hatth}{\bm{\hat{\theta}}}
+\newcommand{\hatphi}{\bm{\hat{\phi}}}
+\newcommand{\hatrho}{\bm{\hat{\rho}}}
+\theoremstyle{definition}
+\newtheorem*{solution*}{Solution}
+\renewcommand*{\proofname}{Solution}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{Chapter 3 - Dynamics}
+
+\begin{proof}{\textbf{3.1}}
+    Let the mass in the rest frame have the initial energy $E_0$ then by
+    conservation of energy each photon must have $E_0/2 = hf/2$ energy
+    after the decay.
+    
+    Then in the frame where the mass is moving with velocity $v$, we have
+    to take into account the relativistic Doppler effect hence the energy
+    of the photons is given by
+    \begin{align*}
+        \frac{hf}{2}\sqrt{\frac{1+ v}{1-v}}
+        \qquad\text{and}\qquad
+        \frac{hf}{2}\sqrt{\frac{1 -v}{1 +v}}
+    \end{align*}
+    Where we assumed that each photon goes in a different direction.
+    Then the total energy of the photons is
+    \begin{align*}
+        E &= \frac{E_0}{2}\sqrt{\frac{1+ v}{1-v}}
+        + \frac{E_0}{2}\sqrt{\frac{1 -v}{1 +v}}\\
+        &= \frac{E_0}{2}\bigg((1+v)\sqrt{\frac{1}{1-v^2}} 
+        + (1-v)\sqrt{\frac{1}{1 -v^2}}\bigg)\\
+        &= \frac{E_0}{\sqrt{1-v^2}} = \gamma E_0
+    \end{align*}
+    Also since $E_0$ is the energy of the rest mass and $\gamma E_0$ is
+    the energy of a moving mass with velocity $v$ then $\gamma E_0 - E_0$
+    must reduce to $mv^2/2$ in the non-relativistic limit then
+    \begin{align*}
+        \frac{E_0}{\sqrt{1-\frac{v^2}{c^2}}} - E_0 &= \frac{mv^2}{2}\\
+        E_0\bigg(\bigg(1 + \frac{(v/c)^2}{2}\bigg) - 1\bigg) &= \frac{mv^2}{2}\\
+        E_0\frac{(v/c)^2}{2} &= \frac{mv^2}{2}\\
+        E_0 &= mc^2
+    \end{align*}
+    Where we approximated by Taylor series $1/\sqrt{1 - (v/c)^2}$ as 
+    $1 + (v/c)^2/2 + O((v/c)^4)$. Therefore the total energy is given by
+    $E = \gamma mc^2$.
+
+    On the other hand, let $p_0$ be the momentum of the mass in the frame
+    where it is traveling with velocity $v$ then when the decay happens
+    the momentum of the photon must take into account the relativistic
+    Doppler effect and the direction of each photon so we will have 
+    opposite signs for each momentum, hence the total momentum will be
+    \begin{align*}
+        p &= \frac{p_0}{2}\sqrt{\frac{1+ v}{1-v}}
+        - \frac{p_0}{2}\sqrt{\frac{1 - v}{1 + v}}\\
+            &= \frac{p_0}{2}\bigg(\frac{1}
+            {\sqrt{1 - v^2}}((1 + v) - (1 - v))\bigg)\\
+            &= \gamma v p_0
+    \end{align*}
+    By adding the missing $c$ we have that $p = \gamma(v/c)p_0$.
+    Since $p$ must reduce to $mv$ in the non-relativistic limit where
+    $\gamma \approx 1$ we must have that $p_0 = mc$. Therefore the total
+    momentum is given by $p = \gamma mv$.
+\end{proof}
+\begin{proof}{\textbf{3.2}}
+    Let the particle be traveling at $u'$ velocity with respect to the $S'$
+    reference frame with an energy $E' = E_{total}$ and a momentum
+    $p' = p_{total}$. Since the velocity of the particle with respect to the
+    CM reference frame is 0 then the CM reference frame $S_{CM}$ must be
+    traveling at the particle velocity $u$ but then seen from the CM reference
+    frame the $S'$ reference frame is moving with a velocity $-u$.    
+    Then from the (Energy/Momentum) Lorentz transformation we have that
+    \begin{align*}
+        E_{CM} &= \gamma_u(E' - up')\\
+        0 &= \gamma_u(p' - uE'/c^2)
+    \end{align*}
+    Therefore from the last equation, we have that the velocity of the frame in
+    which the total momentum is zero is
+    $$u = c^2~\frac{p_{total}}{E_{total}}$$. 
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{3.3}}
+    Let the mass resulting from the collision be $M'$ then from the
+    conservation of energy and momentum we have that
+    \begin{align*}
+        E_{M'} &= E_{M} + E_{m} = \gamma M + m\\
+        p_{M'} &= p_{M} + p_{m} = \gamma M v + 0
+    \end{align*}
+    Where we dropped the $c$'s. Also, we know that $M'^2 = E_{M'}^2 - p_{M'}^2$
+    hence
+    \begin{align*}
+        M' &= \sqrt{(\gamma M + m)^2 - (\gamma M v)^2}\\
+           &= \sqrt{\gamma^2 M^2 + 2\gamma M m +m^2 - \gamma^2 M^2 v^2}\\
+           &= \sqrt{\gamma^2 M^2(1 - v^2) + 2\gamma M m + m^2}\\
+           &= \sqrt{M^2 + 2\gamma M m + m^2}
+    \end{align*}
+    Here we used that $\gamma^2 (1 - v^2) = 1$. Now if we consider that
+    $m \ll M$ we can drop the term $m^2$ hence
+    \begin{align*}
+        M' &\approx \sqrt{M^2 + 2\gamma M m}\\
+           &\approx M\sqrt{1 + \frac{2\gamma m}{M}}\\
+           &\approx M + \gamma m
+    \end{align*}
+    We went from the second to the last step by applying a binomial
+    approximation which we can do because $2\gamma m/M < 1$.
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{3.4}}
+    Let us assume, without loss of generality, that after the decay the
+    particles $M_B$ and $M_C$ have only a momentum $p_B$ and $p_C$ respectively
+    in the $x$ direction.
+
+    Let's write the 4-momenta before the decay for the particle $M_A$
+    (dropping the $c$'s) where we have that
+    \begin{align*}
+        P = (M_A, 0, 0, 0)
+    \end{align*}
+    After the decay, we will have that
+    \begin{align*}
+        P_B = (\gamma M_B, p_B, 0, 0)\qquad P_C = (\gamma M_C, p_C, 0, 0)        
+    \end{align*}
+    Then by the conservation laws of energy and momentum, we get that
+    \begin{align*}
+        M_A &= \gamma M_B + \gamma M_C\\
+        p_B &= -p_C
+    \end{align*}
+    We see that both particles have opposite velocity directions.
+
+    On the other hand, we know that
+    \begin{align*}
+        p_B^2 = E_B^2 - M_B^2 = E_C^2 - M_C^2 = p_C^2
+    \end{align*}
+    Hence
+    \begin{align*}
+        E_B^2 = E_C^2 - M_C^2 + M_B^2\qquad E_C^2 = E_B^2 - M_B^2 + M_C^2
+    \end{align*}
+    So if we replace $E_C = M_A - \gamma M_B$ and knowing that
+    $E_B = \gamma M_B$ we get that
+    \begin{align*}
+        E_B^2 &= (M_A - \gamma M_B)^2 - M_C^2 + M_B^2\\
+        E_B^2 &= M_A^2 - 2\gamma M_BM_A + (\gamma M_B)^2 - M_C^2 + M_B^2\\
+        0 &= M_A^2 - 2E_BM_A - M_C^2 + M_B^2\\
+        E_B &= \frac{M_A^2 + M_B^2 - M_C^2}{2M_A}
+    \end{align*}
+    In the same way, replacing $E_B = M_A - \gamma M_C$ in the other equation
+    and knowing that $E_C = \gamma M_C$ we get that
+    \begin{align*}
+        E_C^2 &= (M_A - \gamma M_C)^2 - M_B^2 + M_C^2\\
+        % E_C^2 &= M_A^2 - 2\gamma M_CM_A + (\gamma M_C)^2 - M_B^2 + M_C^2\\
+        % 0 &= M_A^2 - 2E_CM_A - M_B^2 + M_C^2\\
+        E_C &= \frac{M_A^2 + M_C^2 - M_B^2}{2M_A}
+    \end{align*}
+    Finally, we can determine the momentum of particles $M_C$ and $M_B$ as
+    follows
+    \begin{align*}
+        p_B = -p_C &= \sqrt{
+            \bigg(\frac{M_A^2 + M_B^2 - M_C^2}{2M_A}\bigg)^2
+            - M_B^2
+        }\\
+        &= \sqrt{
+            \frac{(M_A^2 + M_B^2 - M_C^2)^2 - 4M_A^2M_B^2}{4M_A^2}
+        }\\
+        &= \frac{1}{2M_A} \sqrt{(M_A^2 + M_B^2 - M_C^2)^2 - 4M_A^2M_B^2}
+    \end{align*}
+
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{3.5}}
+    Let a particle with mass $m$ and energy $E$ collide with an identical
+    stationary particle.
+
+    From the conservation energy equation, where we dropped the $c$'s,
+    we want to produce $N$ particles that will have $E'$ energy, hence
+    \begin{align*}
+        E + m = NE'
+    \end{align*}
+    Analogously from the momentum conservation equation, we would want that
+    \begin{align*}
+        p = Np'
+    \end{align*}
+    where $p'$ is the momentum of each produced particle. Also, we know that
+    $E'^2 = m^2 + p'^2 $ and $p^2 = E^2 - m^2$ then by squaring the energy
+    conservation equation and replacing the values of $E'^2$ and $p^2$ we get
+    that
+    \begin{align*}
+        (E + m)^2 &= (NE')^2\\
+        (E + m)^2 &= N^2(m^2 + p'^2)\\
+        (E + m)^2 &= N^2m^2 + p^2\\
+        E^2 + 2Em + m^2 &= N^2m^2 + E^2 - m^2\\
+        2Em &= N^2m^2 - 2m^2\\
+        E &= m\bigg(\frac{N^2}{2} - 1\bigg)
+    \end{align*}
+    Which gives us the minimum energy that we would need to produce $N$
+    particles with $m$ (rest) mass.
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{3.6}}
+    Let a particle with mass $M$ decay into several particles where one of
+    them has a mass of $m$ and the sum of the rest sum up to a mass of $\mu$.
+
+    From the energy conservation equation, where we dropped the $c$'s we have
+    that
+    \begin{align*}
+        M &= E_m + E_\mu\\
+        M - E_m &= E_\mu
+    \end{align*}
+    Also, from the momentum conservation equation, we see that
+    \begin{align*}
+        0 &= p_m + p_\mu\\
+        -p_m &= p_\mu
+    \end{align*}
+    By squaring both sides of the energy conservation equation we get that
+    \begin{align*}
+        (M - E_m)^2 &= E_\mu^2\\
+        M^2 - 2ME_m + E_m^2 &= E_\mu^2
+    \end{align*}
+    Also we know that $E_\mu^2 -p_\mu^2 = E_{CM}^2$ where $E_{CM}^2$ is the
+    total energy in the center-of-mass frame for the $\mu$ particles and that
+    $p_m^2 = p_\mu^2$ hence
+    \begin{align*}
+        M^2 - 2ME_m + E_m^2 -p_\mu^2 &= E_\mu^2 -p_\mu^2\\
+        M^2 - 2ME_m + E_m^2 -p_m^2 &= E_{CM}^2
+    \end{align*}
+    So by replacing $m^2 = E_m^2 - p_m^2$ we get that
+    \begin{align*}
+        M^2 - 2ME_m + m^2 &= E_{CM}^2\\
+        M^2 - 2ME_m  &= E_{CM}^2  - m^2\\
+        2ME_m  &= m^2 + M^2 - E_{CM}^2\\
+        E_m &= \frac{m^2 + M^2 - E_{CM}^2}{2M}
+    \end{align*}
+    We can maximize $E_m$ by minimizing $E_{CM}$ which is going to happen
+    when all of the $\mu$ particles are at rest in the CM frame hence
+    $E_{CM} = \mu$. Therefore $E_m$ is going to be the maximum when
+    \begin{align*}
+        E_m &= \frac{m^2 + M^2 - \mu^2}{2M}        
+    \end{align*}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{3.10}}
+    Before the collision, we see that
+    \begin{align*}
+        P_p &=\bigg(\frac{hc}{\lambda}, ~\frac{hc}{\lambda},~ 0,~0\bigg)\\
+        P_m &= \bigg(mc^2,~0,~0,~0\bigg)
+    \end{align*}
+    Where $P_p$ is the 4-momentum for the photon and $P_m$ is the 4-momentum
+    for the electron.
+    Then after the collision, we have that
+    \begin{align*}
+        P_p' &=\bigg(\frac{hc}{\lambda'}, ~\frac{hc}{\lambda'}\cos\theta,
+        ~\frac{hc}{\lambda'}\sin\theta,~0\bigg)\\
+        P_m' &= \bigg(E',~p_x'c,~p_y'c,~0\bigg)
+    \end{align*}
+    From the conservation of energy and momentum, we know that
+    $P_p + P_m = P_p' + P_m'$ and hence
+    \begin{align*}
+        P_m'^2 &= (P_p + P_m - P_p')^2\\
+        P_m'^2 &= P_p^2 + 2P_p(P_m - P_p') + (P_m - P_p')^2\\
+        P_m'^2 &= P_p^2 + 2P_pP_m - 2P_pP_p' + P_m^2 - 2P_mP_p' + P_p'^2\\
+        m^2c^4 &= 0 + 2\frac{hc}{\lambda}mc^2 - 2\bigg(\frac{h^2c^2}{\lambda\lambda'}
+        - \frac{h^2c^2}{\lambda\lambda'}\cos\theta\bigg) + m^2c^4
+        - 2\frac{hc}{\lambda'}mc^2 + 0\\
+        0 &= \frac{hc}{\lambda}mc^2 - \frac{h^2c^2}{\lambda\lambda'}
+        + \frac{h^2c^2}{\lambda\lambda'}\cos\theta
+        - \frac{hc}{\lambda'}mc^2 \\
+        0 &= hmc^3\lambda' - h^2c^2 + h^2c^2\cos\theta - hmc^3\lambda\\
+        \lambda' &= \lambda + \frac{h}{mc} - \frac{h}{mc}\cos\theta
+    \end{align*}
+    Therefore the wavelength $\lambda'$ in terms of $\lambda$ is given by
+    \begin{align*}
+        \lambda' &= \lambda + \frac{h}{mc}(1 - \cos\theta)
+    \end{align*}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{3.11}}
+    Let us compute the increase in speed in $S$ i.e. $a_x dt$ by adding
+    relativistically  $a_x'dt'$ to a given speed $v$ hence
+    \begin{align*}
+        v + a_x dt = \frac{a_x' dt' + v}{1 + a_x' dt' v}
+    \end{align*}
+    also by time dilation, we know that the observed time in $S$ is slowed down
+    by a factor $\gamma$ hence $dt = \gamma dt'$ so by replacing we have that
+    \begin{align*}
+        \frac{a_x' dt' + v}{1 + a_x' dt' v} &= v + a_x \gamma dt'\\
+        a_x' dt' + v &= (v + a_x \gamma dt')(1 + a_x' dt' v)\\
+        a_x' dt' + v &=
+        v + a_x \gamma dt' + a_x' dt' v^2 + \gamma a_x a_x' dt'^2 v\\
+        a_x' dt' &= a_x \gamma dt' + a_x' dt' v^2\\
+        a_x' (1 - v^2) &= a_x \gamma\\
+        a_x' &= a_x \gamma^3
+    \end{align*}
+    Where we dropped terms of order $dt'^2$ and we used that
+    $\gamma^2 = 1/(1-v^2)$.
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{3.12}}
+    Let us take a small period of time $\Delta t$ where the velocity of the
+    stick goes from $0$ to $\Delta u$ because of the force applied, then
+    each dumbbell's mass will have a velocity with respect to
+    the stick which can be determined by relativistically adding/subtracting
+    $v$ and $\Delta u$ since we can assume that the time is so small that the
+    masses still move horizontally hence
+    \begin{align*}
+        u = \frac{v \pm \Delta u}{1 \pm v\Delta u}
+    \end{align*}
+    This implies that the momentum for the mass moving in the positive
+    direction ($\Delta u$ direction) is given by 
+    \begin{align*}
+        p_u &= \gamma_u m u\\
+        &= \gamma_{\Delta u} \gamma_v (1 + v\Delta u)m
+        \bigg(\frac{v + \Delta u}{1 + v\Delta u}\bigg)\\
+        &= \gamma_{\Delta u} \gamma_v (v+ \Delta u)m
+    \end{align*}
+    Then the momentum for the mass moving in the negative direction is
+    given by $-\gamma_{\Delta u} \gamma_v (v - \Delta u)m$.
+    Where we used that $\gamma_u = \gamma_{\Delta u} \gamma_v (1 \pm v\Delta u)$.
+    So the change in momentum of the system after a period $\Delta t$ is
+    \begin{align*}
+        \Delta p &= \gamma_{\Delta u} \gamma_v (v + \Delta u)m
+        - \gamma_{\Delta u} \gamma_v (v - \Delta u)m - 0\\
+        &= 2 \gamma_{\Delta u} \gamma_v m \Delta u
+    \end{align*}
+    but since $\Delta u$ is really small then $\gamma_{\Delta u} \approx 1$
+    hence $p = 2\gamma_v m \Delta u$. Also we have that $F = \Delta p / \Delta t$
+    so we get that 
+    \begin{align*}
+        F = \frac{\Delta p}{\Delta t} &= 2\gamma_v m \frac{\Delta u}{\Delta t}\\
+        &= 2\gamma m a
+    \end{align*}
+    Where we replaced $a = \Delta u/\Delta t$ as the acceleration we added to
+    the system and $\gamma_v = \gamma$ which implies that the system behaves
+    like a mass $M = 2\gamma m$.    
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{3.13}}
+    We know from the relativistic Newton's equation that
+    $$F = \gamma^3ma$$
+    but also we know that $F$ is equal to Hooke's spring force so
+    we have that
+    \begin{align*}
+        \gamma^3ma &= -m\omega^2x\\
+        \gamma^3v\frac{dv}{dx} &= -\omega^2x
+    \end{align*}
+    where we used that $a = vdv/dx$, now by integrating we get that
+    \begin{align*}
+        \int \gamma^3vdv &= \int -\omega^2xdx\\
+        \frac{1}{\sqrt{1-v^2}} &= -\omega^2 \frac{x^2}{2} + C\\
+        \gamma &= -\frac{\omega^2x^2}{2} + C
+    \end{align*}
+    From the initial conditions, when $x = b$ we have that $v = 0$ then
+    $C = 1 + \frac{\omega^2b^2}{2}$ so replacing and adding the $c$'s to fit
+    the units we have that
+    \begin{align*}
+        \gamma &= 1 + \frac{\omega^2}{2c^2}(b^2 - x^2)
+    \end{align*}
+    Now we need to solve the differential equation we have to determine the
+    period. Here we named $A = \frac{\omega^2}{2c^2}$ for simplicity hence 
+    \begin{align*}
+        1 + A(b^2 - x^2) &= \frac{1}{\sqrt{1 - (\frac{dx}{dt}/c)^2}}\\
+        1 - \bigg(\frac{dx}{dt}\bigg)^2\frac{1}{c^2} &= \frac{1}{(1 + A(b^2 - x^2))^2} \\
+        \bigg(\frac{dx}{dt}\bigg)^2\frac{1}{c^2} &= 1 - \frac{1}{(1 + A(b^2 - x^2))^2} \\
+        \frac{dx}{dt} &=
+        \frac{c\sqrt{(1 + A(b^2 - x^2))^2 - 1}}{1 + A(b^2 - x^2)}
+    \end{align*}
+    Since we know $\gamma = 1 + A(b^2 - x^2)$ by replacing and solving the
+    differential equation we get that
+    \begin{align*}
+        \int_0^{T/4} dt &= \int_0^b \frac{\gamma}{c\sqrt{\gamma^2 - 1}} dx\\
+        \frac{T}{4} &= \frac{1}{c}\int_0^b \frac{\gamma}{\sqrt{\gamma^2 - 1}} dx\\
+        T &= \frac{4}{c}\int_0^b \frac{\gamma}{\sqrt{\gamma^2 - 1}} dx
+    \end{align*}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{3.15}}
+    Let the dustpan have a mass $M$ after some time $t$ in the dustpan frame.
+    Then after $dt$ time the energy would change from $\gamma M$ to
+    $\gamma M + \lambda dx = \gamma M + \lambda v dt$ and the momentum would be
+    $\gamma M v$ also, we know that $M^2 = E^2 - p^2$ hence
+    \begin{align*}
+        (M + dM)^2 &= (\gamma M + \lambda v dt)^2 - (\gamma M v)^2\\
+        M + dM &= \sqrt{(\gamma M)^2 + 2\gamma M\lambda v dt + (\lambda v dt)^2 - (\gamma M v)^2}\\
+        M + dM &\approx \sqrt{(\gamma M)^2 + 2\gamma M\lambda v dt - (\gamma M v)^2}\\
+        M + dM &\approx \sqrt{2\gamma M\lambda v dt + (\gamma M)^2(1 - v^2)}\\
+        M + dM &\approx M\sqrt{\frac{2\gamma \lambda v dt}{M} + 1}
+    \end{align*}
+    Where we dismissed the term involving $dt^2$. On the other hand, by
+    applying the binomial approximation we have that
+    \begin{align*}
+        M + dM &\approx M\bigg(1 + \frac{\gamma \lambda v dt}{M}\bigg)\\
+        dM &\approx \gamma \lambda v dt
+    \end{align*}
+    Therefore the rate at which the mass of the dustpan plus the dust inside
+    is increasing is
+    $$\frac{dM}{dt} \approx \gamma \lambda v$$
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{3.16}}
+    The energy of the dustpan at the beginning is $\gamma_0 M_0$ in the 
+    lab frame hence after a distance of $x$ the energy will be
+    $\gamma M = \gamma_0 M_0 + \lambda x$. Also, we know that the momentum is
+    conserved then at any moment the momentum must be $\gamma_0M_0v_0$
+    hence when a distance $x$ has been covered, we can write
+    that $\gamma Mv = \gamma_0M_0v_0$ so we have that
+    \begin{align*}
+        \gamma_0 M_0 + \lambda x &= \frac{\gamma_0 M_0 v_0}{v}\\
+        v &= \frac{\gamma_0 M_0 v_0}{\gamma_0 M_0 + \lambda x}
+    \end{align*}
+    Which is the function $v(x)$ we are looking for.
+
+    Now from the $v(x)$ equation, we can determine $x(t)$ by integration as follows
+    \begin{align*}
+        \frac{dx}{dt} &= \frac{\gamma_0 M_0 v_0}{\gamma_0 M_0 + \lambda x}\\
+        \int(\gamma_0 M_0 + \lambda x)dx &= \int\gamma_0 M_0 v_0 dt\\
+        \gamma_0 M_0x + \frac{\lambda x^2}{2} &= \gamma_0 M_0 v_0 t + C\\
+        \frac{\lambda x^2}{2\gamma_0 M_0} + x &= v_0 t
+    \end{align*}
+    Where we used that $x=0$ when $t=0$ hence the constant of integration $C =0$.
+    By solving for $x$ we get that
+    \begin{align*}
+        x &= \frac{-1\pm \sqrt{1
+        + \frac{4\lambda v_0t}{2\gamma_0 M_0}}}{\frac{2\lambda}{2\gamma_0 M_0}}\\
+        x &= \frac{-\gamma_0 M_0
+        \pm \gamma_0 M_0\sqrt{1 + \frac{2\lambda v_0t}{\gamma_0 M_0}}}{\lambda}\\
+        x &= \frac{-\gamma_0 M_0 \pm
+        \sqrt{(\gamma_0 M_0)^2 + 2\lambda v_0\gamma_0 M_0 t}}{\lambda}
+    \end{align*}
+    Finally, to obtain $v(t) = dx/dt$ we derivate the above equation with
+    respect to $t$ as follows
+    \begin{align*}
+        v(t) &=\frac{2\lambda v_0\gamma_0 M_0}
+        {2\lambda\sqrt{(\gamma_0 M_0)^2 + 2\lambda v_0\gamma_0 M_0 t}}\\
+        v(t) &=\frac{ v_0}
+        {\sqrt{1 + \frac{2\lambda v_0 t}{\gamma_0 M_0}}}
+    \end{align*}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{3.17}}
+    From the dustpan frame, the dust is traveling with a velocity $v$ towards
+    the dustpan, if we analyze a small timeframe $dt'$ in the dustpan frame
+    we see that the dust mass colliding with the dustpan must be
+    $\gamma\lambda vdt'$ because of length contraction. So the dustpan momentum 
+    is going to change by $-\gamma(\gamma\lambda vdt')v$ were we
+    used a negative sign since the dust is traveling toward the dustpan hence
+    this is the change in momentum $dp = -\gamma^{2}\lambda v^2dt'$ which
+    implies that the force exerted on the dustpan is
+    \begin{align*}
+        F = \frac{dp}{dt'} = -\gamma^{2}\lambda v^2
+    \end{align*}
+    If we work now from the lab frame we see that the dustpan is traveling
+    towards the dust with a velocity $v$ so after a time $dt$ in the lab frame
+    the dustpan must have collided (and grabbed) a dust mass $dm$ of
+    $\gamma \lambda dx = \gamma \lambda vdt$ because of what we computed
+    in problem 3.15 which changes the momentum of the dustpan by
+    $dp = -\gamma (\gamma\lambda vdt) v$. 
+    Therefore the force exerted on the dustpan is
+    \begin{align*}
+        F = \frac{dp}{dt} = -\gamma^{2}\lambda v^2
+    \end{align*}
+    Which has the same magnitude as the one we computed from the dustpan frame. 
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{3.31}}
+    The 4-momentum vector before the decay (where we dropped the c's) is given
+    by
+    \begin{align*}
+        P = (\gamma m, \gamma mv, 0, 0)
+    \end{align*}
+    After the decay, the photons will have the following 4-momentum vectors
+    \begin{align*}
+        P_{ph1} &= (E_1, E_1, 0, 0)\\
+        P_{ph2} &= \bigg(E_2, -\frac{E_2}{2}, \frac{\sqrt{3}E_2}{2}, 0\bigg)\\
+        P_{ph3} &= \bigg(E_3, -\frac{E_3}{2}, -\frac{\sqrt{3}E_3}{2}, 0\bigg)
+    \end{align*}
+    Where we are considering the $x$ positive direction to the right and the
+    $y$ positive direction upwards. Also, we used that $\sin 30 = 1/2$ and
+    $\cos 30 = \sqrt{3}/2$.
+
+    From the conservation of energy and momentum we have that
+    \begin{align}
+        \gamma m &= E_1 + E_2 + E_3\\
+        \gamma mv &= E_1 -\frac{E_2}{2} -\frac{E_3}{2}\\
+        0 &= \frac{\sqrt{3}E_2}{2} - \frac{\sqrt{3}E_3}{2}
+    \end{align}
+    From (3) we have that $E_3 = E_2$ hence by replacing in (1) and (2) we get
+    that
+    \begin{align}
+        \gamma m &= E_1 + 2E_2\\
+        \gamma mv &= E_1 - E_2
+    \end{align}
+    Then by subtracting the first equation from the last equation, we get that
+    \begin{align*}
+        \gamma mv -\gamma m &= E_1 - E_2 -(E_1 + 2E_2)\\
+        \gamma m(v - 1) &= -3E_2\\
+        E_2 &= \frac{\gamma m(1 - v)}{3}
+    \end{align*}
+    We know that $E_3 = E_2$ hence $E_3 = \frac{\gamma m(1 - v)}{3}$.
+    Finally by replacing this value in (4) we get that
+    \begin{align*}
+        \gamma m &= E_1 + \frac{2\gamma m(1 - v)}{3}\\
+        E_1 &= \gamma m\bigg(1 - \frac{2(1 - v)}{3}\bigg)
+    \end{align*}
+
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{3.32}}
+    The 4-momentum vector before the collision (where we dropped the c's) is
+    given by
+    \begin{align*}
+        P_p &= (E, E, 0, 0)\\
+        P_M &= (M ,0 ,0 ,0)
+    \end{align*}
+    After the collision, the photon and the mass will have the following
+    4-momentum vectors
+    \begin{align*}
+        P_{p}' &= (E', 0, E', 0)\\
+        P_{M}' &= (\gamma M, p\cos\theta, -p\sin\theta, 0)
+    \end{align*}
+    Where we assumed the positive $y$-axis upwards in the direction of the
+    photon after the collision.
+
+    From the conservation of energy and momentum, we have that
+    \begin{align*}
+        E + M &= E' + \gamma M &\quad\text{(energy conservation)}\\
+        E &= p \cos\theta &\quad\text{(x-axis momentum conservation)}\\
+        0 &= E' - p\sin\theta &\quad\text{(y-axis momentum conservation)}
+    \end{align*}
+    From the x-axis and y-axis momentum conservation, we have that
+    $E = p\cos\theta$ and $E' = p \sin\theta$ so the total momentum is given
+    by $p^2 = (p\cos\theta)^2 + (p\sin\theta)^2 = E^2 + E'^2$.
+
+    Also, we know that $(\gamma M)^2 = p^2 + M^2$ then by replacing
+    $p^2$ we get that $(\gamma M)^2 = E^2 + E'^2 + M^2$.
+    Finally, by replacing $\gamma M = E + M - E'$ that we got from the energy
+    conervation equation we get that
+    \begin{align*}
+        (E + M - E')^2 &= E^2 + E'^2 + M^2\\
+        (E+ M)^2 - 2(E+ M)E' + E'^2 &= E^2 + E'^2 + M^2\\
+        E' &= -\frac{E^2 + M^2 - (E+M)^2}{2(E + M)}\\
+        E' &= \frac{-E^2 - M^2 + E^2 +2EM + M^2}{2(E + M)}\\
+        E' &= \frac{EM}{E+M}
+    \end{align*}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{3.40}}
+    Let us analyze the moment right before the collision then the acceleration
+    of mass at this moment is $a = F/(\gamma^3 m)$ and we know that
+    $a = v dv/dx$ hence the velocity at this point is
+    \begin{align*}
+        v\frac{dv}{dx} &= \frac{F}{\gamma^3 m}\\
+        \int_{0}^v \gamma^3 vdv &= \frac{F}{m} \int_x^0 dx\\
+        \frac{1}{\sqrt{1 - v^2}} - 1 &= -\frac{F}{m} x\\
+        \frac{1}{\sqrt{1 - v^2}} &= \frac{m - Fx}{m}\\
+        1 - v^2 &= \bigg(\frac{m}{m - Fx}\bigg)^2\\
+        v &= \sqrt{1- \bigg(\frac{m}{m - Fx}\bigg)^2}
+    \end{align*}
+    Now let $M$ be the joint mass after the collision.
+    So from the conservation of momentum we have that
+    \begin{align*}
+        p_M &= p_m + p_m = \gamma m v + 0 = \gamma m v
+    \end{align*}
+    And from the conservation of energy we get that
+    \begin{align*}
+        E_M = E_m + E_m = \gamma m + m = m(\gamma + 1)
+    \end{align*}
+    But also we know that $M^2 = E_M^2 - p_M^2$ hence
+    \begin{align*}
+        M^2 &= m^2(\gamma + 1)^2  - \gamma^2 m^2 v^2\\
+        &= m^2(\gamma^2 + 2\gamma + 1  - \gamma^2 v^2)\\
+        &= m^2(\gamma^2(1 - v^2) + 2\gamma + 1)\\
+        &= 2m^2(1 + \gamma)
+    \end{align*}
+    Now by replacing the value we have for $v$ we get that
+    \begin{align*}
+        M^2 &= 2m^2\bigg(1 + \frac{1}{\sqrt{1 - (1-(\frac{m}{m - Fx})^2)}}\bigg)\\
+        M^2 &= 2m^2\bigg(1 + \frac{1}{\frac{m}{m - Fx}}\bigg)\\        
+        M^2 &= 2m^2\bigg(\frac{m + m- Fx}{m}\bigg)\\        
+        M^2 &= 2m(2m- Fx)\\        
+        M &= \sqrt{2m(2m - Fx)}
+    \end{align*}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{3.45}}
+    Let $l$ be the maximum distance the string will extend and let us assume
+    the tension of the string $T$ is constant so we have that
+    \begin{align*}
+        F\Delta x &= \Delta E\\
+        -T (l - 0) &= m - \gamma m\\
+        l &= \frac{m(\gamma - 1)}{T} = \frac{m}{4T}
+    \end{align*}
+    Where we used that $\gamma_{3c/5} = 5/4$.
+    Now we are interested in the distance $x$ at which the masses will meet
+    again. At this point, the rear mass will have an energy of $m + Tx$,
+    and the front mass will have an energy of $m + T(l - x)$.
+    Also we know that $p = \sqrt{E^2 - m^2}$ so the momentum at the meeting
+    point for each mass will be
+    \begin{align*}
+        p_{m_r} = \sqrt{(m + Tx)^2 - m^2}
+        \quad\text{ and }\quad
+        p_{m_f} = \sqrt{(5m/4 - Tx)^2 - m^2}
+    \end{align*}
+    But $F = dp/dt$ tells us that these magnitudes must be equal, because the
+    same force $T$ (in magnitude, but opposite in direction) acts on the two
+    masses for the same time hence
+    \begin{align*}
+        \sqrt{(m + Tx)^2 - m^2} &= \sqrt{\bigg(\frac{5m}{4} - Tx\bigg)^2 - m^2}\\
+        m^2 + 2mTx + (Tx)^2 - m^2
+        &= \bigg(\frac{5m}{4}\bigg)^2 - 2Tx\bigg(\frac{5m}{4}\bigg) + (Tx)^2 - m^2\\
+        2mTx &= \bigg(\frac{5m}{4}\bigg)^2 - \frac{5mTx}{2}  - m^2\\
+        2mTx + \frac{5mTx}{2} &= m^2\bigg(\frac{25}{16} - 1\bigg)\\
+        Tx\bigg(\frac{9}{2}\bigg) &= m\bigg(\frac{9}{16}\bigg)\\
+        x &= \frac{m}{8T}
+    \end{align*}
+    Therefore the masses will meet at a distance $x = m/8T$ from the starting
+    point.
+\end{proof}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
