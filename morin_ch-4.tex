@@ -1,0 +1,221 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+
+\title{\textbf{Solved selected problems of Special Relativity - Morin}}
+\author{Franco Zacco}
+\date{}
+
+\addtolength{\topmargin}{-3cm}
+\addtolength{\textheight}{3cm}
+
+\newcommand{\hatr}{\bm{\hat{r}}}
+\newcommand{\hatx}{\bm{\hat{x}}}
+\newcommand{\haty}{\bm{\hat{y}}}
+\newcommand{\hatz}{\bm{\hat{z}}}
+\newcommand{\hatth}{\bm{\hat{\theta}}}
+\newcommand{\hatphi}{\bm{\hat{\phi}}}
+\newcommand{\hatrho}{\bm{\hat{\rho}}}
+\theoremstyle{definition}
+\newtheorem*{solution*}{Solution}
+\renewcommand*{\proofname}{Solution}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{Chapter 4 - 4-vectors}
+
+\begin{proof}{\textbf{4.1}}
+    The 4-vectors of B and C seen from A's frame are $(\gamma_u, \gamma_u u)$
+    and $(\gamma_v, -\gamma_v v)$ respectively.
+    Let $w$ be the velocity of B seen from C then the 4-vector of B seen from C
+    is $(\gamma_w, \gamma_w w)$ and the 4-vector of C in its own frame is
+    $(1, 0)$. By using the inner-product invariance, we have that
+    \begin{align*}
+        (\gamma_w, \gamma_w w)\cdot(1, 0) &=
+        (\gamma_u, \gamma_u u)\cdot(\gamma_v, -\gamma_v v)\\
+        \gamma_w &= \gamma_u\gamma_v(1 + uv)
+    \end{align*}
+    By replacing the value of $\gamma_u$, $\gamma_v$ and $\gamma_w$,
+    we get that
+    \begin{align*}
+        \frac{1}{\sqrt{1 - w^2}} &= \frac{(1 + uv)}{\sqrt{1 - u^2}\sqrt{1 - v^2}}\\
+        \sqrt{1 - w^2} &= \frac{\sqrt{1 - u^2}\sqrt{1 - v^2}}{1 + uv}\\
+        1 - w^2 &= \frac{(1 - u^2)(1 - v^2)}{(1 + uv)^2}\\
+        1 - w^2 &= \frac{1 + 2uv + (uv)^2 - v^2 - u^2 -2uv}{(1 + uv)^2}\\
+        1 - w^2 &= \frac{(1 + uv)^2 - (u +v)^2}{(1 + uv)^2}\\
+        w^2 &= \frac{(u +v)^2}{(1 + uv)^2}\\
+        w &= \frac{u +v}{1 + uv}
+    \end{align*}
+    Which is the velocity addition equation we were looking for.
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{4.2}}
+    The 4-vectors of the particles seen from the lab frame are
+    $(\gamma_v, \gamma_v v\cos\theta, \gamma_v v\sin\theta)$ and
+    $(\gamma_v, \gamma_v v\cos\theta, -\gamma_v v\sin\theta)$ respectively.
+
+    Let $w$ be the velocity of one particle seen from the other particle then
+    the 4-vector is
+    $(\gamma_w, \gamma_w w)$
+    and the 4-vector of the particle in its frame is $(1, 0)$.
+    By using the inner-product invariance, we have that
+    \begin{align*}
+        (\gamma_w, \gamma_w w)\cdot(1, 0) &=
+        (\gamma_v, \gamma_v v\cos\theta, \gamma_v v\sin\theta)
+        (\gamma_v, \gamma_v v\cos\theta, -\gamma_v v\sin\theta)\\
+        \gamma_w &= \gamma_v^2 - (\gamma_v v\cos\theta)^2 + (\gamma_v v\sin\theta)^2\\
+        \gamma_w &= \gamma_v^2(1 - v^2(\cos^2\theta - \sin^2\theta))\\
+        \gamma_w &= \gamma_v^2(1 - v^2\cos(2\theta))
+    \end{align*}
+    Where we used that $\cos^2\theta - \sin^2\theta = \cos2\theta$.
+    By replacing the value of $\gamma_w$ and $\gamma_v$,
+    we get that
+    \begin{align*}
+        \frac{1}{\sqrt{1 - w^2}} &= \frac{1 - v^2\cos(2\theta)}{1 - v^2}\\
+        1 - w^2 &= \frac{(1 - v^2)^2}{(1 - v^2\cos(2\theta))^2}\\
+        w^2 &= 1 - \frac{(1 - v^2)^2}{(1 - v^2\cos(2\theta))^2}\\
+        w &= \sqrt{1 - \frac{(1 - v^2)^2}{(1 - v^2\cos(2\theta))^2}}
+    \end{align*}
+    Which is the same velocity we got in problem 2.3.
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{4.4}}
+\begin{itemize}
+    \item [(a)] Given that $v(t') = \tanh(at')$ where $t'$ is the proper time
+    on the spaceship and the spaceship is moving in the $x$ direction the
+    velocity 4-vector must be
+    \begin{align*}
+        V &= (\gamma,~\gamma\tanh(at'),~0,~0)\\
+        V &= \Bigg(
+            \frac{1}{\sqrt{1 - \tanh^2(at')}},~
+            \frac{\tanh(at')}{\sqrt{1 - \tanh^2(at')}},~
+            0,~
+            0
+        \Bigg)\\
+        V &= (\cosh(at'),~\sinh(at'),~0,~0)
+    \end{align*}
+    Also, we know that $A = dV/dt'$ hence
+    \begin{align*}
+        A &= (a\sinh(at'),~a\cosh(at'),~0,~0)
+    \end{align*}
+    \item [(b)] In the spaceship frame we know that $v' = 0$ hence
+    \begin{align*}
+        V' &= (1,~0,~0,~0)
+    \end{align*}
+    since $\sinh(0) = 0$ and $\cosh(0) = 1$ we have that
+    \begin{align*}
+        A' &= (0,~a,~0,~0)
+    \end{align*}
+    \item [(c)] We will verify first that $V'$ transforms into $V$ by the
+    Lorentz transformation
+    \begin{align*}
+        V_0 &= \gamma(V_0' + vV_1') = \gamma\\
+        V_1 &= \gamma(V_1' + vV_0') = \gamma v = \gamma \tanh(at')\\
+        V_2 &= V_2' = 0\\
+        V_3 &= V_3' = 0
+    \end{align*}
+    Now we will check that $V$ transforms into $V'$ taking into account that
+    $S$ is moving backward with respect to $S'$ hence
+    \begin{align*}
+        V_0' &= \gamma(V_0 - vV_1) = \gamma(\gamma - \gamma v^2) = 1\\
+        V_1' &= \gamma(V_1 - vV_0) = \gamma(\gamma v - v\gamma) = 0\\
+        V_2' &= V_2 = 0\\
+        V_3' &= V_3 = 0
+    \end{align*}
+
+    We will verify now that $A'$ transforms into $A$ by the
+    Lorentz transformation
+    \begin{align*}
+        A_0 &= \gamma(A_0' + vA_1') = \gamma va
+        = a \frac{\tanh(at')}{\sqrt{1 - \tanh^2(at')}} = a \sinh(at')\\
+        A_1 &= \gamma(A_1' + vA_0') = \gamma a
+        = \frac{a}{\sqrt{1 - \tanh^2(at')}} = a\cosh(at')\\
+        A_2 &= A_2' = 0\\
+        A_3 &= A_3' = 0
+    \end{align*}
+    Finally, we will check that $A$ transforms into $A'$ taking into account
+    that $S$ is moving backward with respect to $S'$ hence
+    \begin{align*}
+        A_0' &= \gamma(A_0 - vA_1) = \gamma a(\sinh(at') - \tanh(at')\cosh(at')) = 0\\
+        A_1' &= \gamma(A_1 - vA_0) = \gamma a(\cosh(at') - v\sinh(at'))
+        = \frac{\gamma a}{\cosh(at')} = a\\ 
+        A_2' &= A_2 = 0\\
+        A_3' &= A_3 = 0
+    \end{align*}
+\end{itemize}
+\end{proof}
+\begin{proof}{\textbf{4.6}}
+    Let $v = \sqrt{v_x^2 + v_y^2 + v_z^2}$ then the derivative is
+    \begin{align*}
+        \frac{dv}{dt} &= \frac{2v_x\dot{v_x} + 2v_z\dot{v_z} +2v_z\dot{v_z}}
+        {2\sqrt{v_x^2 + v_y^2 + v_z^2}}\\
+        \frac{dv}{dt} &= \frac{v_x\dot{v_x} + v_z\dot{v_z} +v_z\dot{v_z}}
+        {\sqrt{v_x^2 + v_y^2 + v_z^2}}
+    \end{align*}
+    Since at the moment in question, we have that $v_y = v_z = 0$ then
+    \begin{align*}
+        \frac{dv}{dt} &= \frac{v_x\dot{v_x}}{\sqrt{v_x^2}}
+        = \dot{v_x} = a_x
+    \end{align*}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{4.7}}
+    From the equation we got in Problem 4.2 we have that one particle sees
+    the other with a velocity $w$ given by
+    \begin{align*}
+        w &= \sqrt{1 - \frac{(1 - v^2)^2}{(1 - v^2\cos(2\theta))^2}}
+    \end{align*}
+    We want that $w = v$ hence the angle $\theta$ between them must be 
+    \begin{align*}
+        v &= \sqrt{1 - \frac{(1 - v^2)^2}{(1 - v^2\cos(2\theta))^2}}\\
+        1 - v^2  &= \frac{(1 - v^2)^2}{(1 - v^2\cos(2\theta))^2}\\
+        (1 - v^2\cos(2\theta))^2  &= 1 - v^2\\
+        \cos(2\theta)  &= \frac{1 - \sqrt{1 - v^2}}{v^2}\\
+        \theta &= \frac{1}{2}\arccos\bigg(\frac{1 - \sqrt{1 - v^2}}{v^2}\bigg)
+    \end{align*}
+    Finally, if $v \to 0$ we have that
+    \begin{align*}
+        \lim_{v \to 0}\frac{1 - \sqrt{1 - v^2}}{v^2} = \frac{1}{2}
+    \end{align*}
+    Which implies that 
+    \begin{align*}
+        \theta &= \frac{1}{2}\arccos\bigg(\frac{1}{2}\bigg) = \frac{\pi}{6}
+    \end{align*}
+    And if $v \approx 1$ (i.e. $v \approx c$) we have that
+    \begin{align*}
+        \theta &= \frac{1}{2}\arccos(1) = 0
+    \end{align*}
+\end{proof}\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
