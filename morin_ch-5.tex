@@ -1,0 +1,560 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+
+\title{\textbf{Solved selected problems of Special Relativity - Morin}}
+\author{Franco Zacco}
+\date{}
+
+\addtolength{\topmargin}{-3cm}
+\addtolength{\textheight}{3cm}
+
+\newcommand{\hatr}{\bm{\hat{r}}}
+\newcommand{\hatx}{\bm{\hat{x}}}
+\newcommand{\haty}{\bm{\hat{y}}}
+\newcommand{\hatz}{\bm{\hat{z}}}
+\newcommand{\hatth}{\bm{\hat{\theta}}}
+\newcommand{\hatphi}{\bm{\hat{\phi}}}
+\newcommand{\hatrho}{\bm{\hat{\rho}}}
+\theoremstyle{definition}
+\newtheorem*{solution*}{Solution}
+\renewcommand*{\proofname}{Solution}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{Chapter 5 - General Relativity}
+
+\begin{proof}{\textbf{5.1}}
+    % Let $t_g$ be the time that passes on the clock that stays on the ground.
+    Let us start by computing the time gain because of the General Relativity
+    effect when the object is in motion (upward or downward) if we consider a
+    ground-measured fraction of time $dt = dh/v$ we have that the time
+    considering this effect is given by   
+    \begin{align*}
+        t_{gr} &= 2\int_0^h \Bigg(1 + \frac{gh}{c^2}\bigg)\frac{dh}{v}\\
+        &= \frac{2}{v} \bigg(h + \frac{gh^2}{2c^2}\bigg) \\
+        &= \frac{2h}{v} + \frac{gh^2}{vc^2}
+    \end{align*}
+    In addition, this is going to have a time loss due to the Special Relativity
+    effects but since we are assuming that $v \ll c$ we can write $\gamma$ 
+    by binomial approximation as $\gamma \approx 1 - (v^2/2c^2)$ hence
+    \begin{align*}
+        t_{sr} &= \gamma t_{gr}\\
+        &= \bigg(1 - \frac{v^2}{2c^2}\bigg)
+        \bigg(\frac{2h}{v} + \frac{gh^2}{vc^2}\bigg)\\
+        &= \frac{2h}{v} + \frac{gh^2}{vc^2} - \frac{vh}{c^2} - \frac{vgh^2}{2c^4}
+    \end{align*}
+    Given that $v \ll c$ and the last term of $t_{sr}$ involves the 4th power
+    of $c$ we can approximate $t_{sr}$ correctly with
+    $$t_{sr}  = \frac{2h}{v} + \frac{gh^2}{vc^2} - \frac{vh}{c^2}$$
+    Finally, we want to determine $T$ such that $t = (1 + gh/c^2)T + t_{sr}$
+    where $t = 2h/v + T$ is the time that passed in the clock that stayed on 
+    the ground, hence
+    \begin{align*}
+        \frac{2h}{v} + T &= \bigg(1 + \frac{gh}{c^2}\bigg)T
+        + \frac{2h}{v} + \frac{gh^2}{vc^2} - \frac{vh}{c^2}\\
+        0 &= \frac{gh}{c^2}T + \frac{gh^2}{vc^2} - \frac{vh}{c^2}\\
+        ghT + \frac{gh^2}{v} &= vh\\
+        T &= \frac{v}{g} - \frac{h}{v}
+    \end{align*}
+
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.2}}
+\begin{itemize}
+    \item [(a)] Let $f(h)$ be the time-dilation factor as a function of height
+    then we know that $\Delta t_h = f(h) \Delta t_0$. Let us suppose that we
+    have three clocks, one at the ground level, the next one at a height
+    $h_1$ and the later one at a height $h_1 + h_2$ for some $h_2$.
+    The time dilation between the one on the ground and the one at a height
+    $h_1$ is $\Delta t_{h_1} = f(h_1) \Delta t_0$ and the time dilation
+    between the one at a height $h_1$ and the one at a height
+    $h_1 + h_2$ must be $\Delta t_{h_2} = f(h_2) \Delta t_{h_1}$ so by replacing
+    $\Delta t_{h_1}$ we get that $\Delta t_{h_2} = f(h_2)f(h_1) \Delta t_{0}$
+    but also the time dilation between the one on the ground and the one
+    at a height $h_1 + h_2$ is
+    $\Delta t_{h_2} = f(h_1 + h_2) \Delta t_{0}$ hence
+    it must happen that $f(h_1 + h_2) = f(h_2)f(h_1)$.
+
+    Let us derivate the equation $f(x + y) = f(x)f(y)$ with respect to $x$
+    as follows 
+    \begin{align*}
+        f'(x + y) = f'(x)f(y)
+    \end{align*}
+    and let us set $x = 0$, then
+    \begin{align*}
+        f'(y) &= f'(0)f(y)
+    \end{align*}
+    but $f'(0)$ is a constant so let us call it $C$, then
+    \begin{align*}
+        \int \frac{f'(y)}{f(y)}dy &= C \int dy\\
+        \log f(y) &= Cy + D\\
+        f(y) &= e^{Cy}
+    \end{align*}
+    Where we used that $f(0) = 1$ to determine that $D = 0$.
+
+    Let us take $C = g/c^2$ hence $f(h) = e^{gh/c^2}$ which agrees with the
+    property we are looking for i.e.
+    \begin{align*}
+        f(h_1 + h_2) = e^{\frac{g(h_1 + h_2)}{c^2}}
+        = e^{(gh_1/c^2)}e^{(gh_2/c^2)} = f(h_1)f(h_2)
+    \end{align*}
+    When $h$ is small we can approximate
+    $e^{\frac{gh}{c^2}} \approx 1 + \frac{gh}{c^2}$ hence the time-dilation for a
+    small $h$ would be
+    \begin{align*}
+        \Delta t_h = \bigg(1 + \frac{gh}{c^2}\bigg) \Delta t_0
+    \end{align*}
+    Which agrees with Eq. (5.4).
+\cleardoublepage
+    \item [(b)] Let us take a series of $n$ clocks 
+    separated by a small height $\Delta h$ between the ground and a height $h$.
+    Since the height between clocks is small we can use the approximated
+    time-dilation factor, so for the first clock, we have that
+    \begin{align*}
+        \Delta t_{h_1} = \bigg(1 + \frac{g\Delta h}{c^2}\bigg) \Delta t_0
+    \end{align*} 
+    In the same way, the time dilation between the first clock and
+    the second one is
+    \begin{align*}
+        \Delta t_{h_2} &= \bigg(1 + \frac{g\Delta h}{c^2}\bigg) \Delta t_{h_1}
+            = \bigg(1 + \frac{g\Delta h}{c^2}\bigg)^2 \Delta t_0
+    \end{align*}
+    By continuing this process and replacing values subsequently, we can
+    compute the time dilation for the $nth$ clock at height $h$ as follows
+    \begin{align*}
+        \Delta t_{h} = \bigg(1 + \frac{g\Delta h}{c^2}\bigg)^n \Delta t_{0}
+    \end{align*}
+    Hence the time dilation factor $f(h)$ for a height $h$ is 
+    \begin{align*}
+        f(h) = \bigg(1 + \frac{g\Delta h}{c^2}\bigg)^n
+    \end{align*}
+    By applying logarithms to both sides and using the approximation
+    $\log(1 + x) \approx x$ we get that
+    \begin{align*}
+       \log(f(h))
+       &= \log \bigg(\bigg(1 + \frac{g\Delta h}{c^2}\bigg)^n\bigg)\\
+       \log(f(h)) &= n\log \bigg(1 + \frac{g\Delta h}{c^2}\bigg)\\
+       \log(f(h)) &= n\bigg(\frac{g\Delta h}{c^2}\bigg)\\
+       \log(f(h)) &= \frac{g h}{c^2}\\
+       f(h) &= e^{\frac{g h}{c^2}}
+    \end{align*}
+    Which is the same factor we obtained in (a) as we wanted.
+\end{itemize}
+\end{proof}
+
+\cleardoublepage
+\begin{proof}{\textbf{5.3}}
+    Let us take a series of $n$ clocks separated by a small distance $dr$
+    between the radius $r_{low}$ and the radius $r_{high}$.
+    Since the height between clocks is small we can use the approximated
+    time-dilation factor, so for the first clock at a height
+    $r_1 = r_{low} + dr$, we have that
+    \begin{align*}
+        \Delta t_{r_1} &=
+        \bigg(1 + \frac{GMdr}{r_1^2c^2}\bigg)\Delta t_{r_{low}}
+    \end{align*}
+    We also used Newton's universal law of gravitation which gives the value of
+    $g$ at radius $r$ as $g_r = GM/r^2$.
+
+    In the same way, the time dilation between the first clock and
+    the second one is
+    \begin{align*}
+        \Delta t_{r_2} &= \bigg(1 + \frac{GMdr}{r_2^2c^2}\bigg) \Delta t_{r_1}\\
+        &= \bigg(1 + \frac{GMdr}{r_2^2c^2}\bigg)
+            \bigg(1 + \frac{GMdr}{r_1^2c^2}\bigg) \Delta t_{r_{low}}
+    \end{align*}
+    Where $r_2 = r_1 + dr$.
+    By continuing this process and replacing values subsequently, we can
+    compute the time dilation for the $nth$ clock at $r_{high}$ as follows
+    \begin{align*}
+        \Delta t_{r_{high}} =
+        \bigg(1 + \frac{GMdr}{r_1^2c^2}\bigg)
+        \bigg(1 + \frac{GMdr}{r_2^2c^2}\bigg)
+        ... \bigg(1 + \frac{GMdr}{r_n^2c^2}\bigg) \Delta t_{r_{low}}
+    \end{align*}
+    Hence the time dilation factor $f$ at $r_{high}$ is 
+    \begin{align*}
+        f =
+        \bigg(1 + \frac{GMdr}{r_1^2c^2}\bigg)
+        \bigg(1 + \frac{GMdr}{r_2^2c^2}\bigg)
+        ... \bigg(1 + \frac{GMdr}{r_n^2c^2}\bigg)
+    \end{align*}
+    By applying logarithms to both sides we get that
+    \begin{align*}
+        \log(f)
+            &= \log \bigg(
+                \bigg(1 + \frac{GMdr}{r_1^2c^2}\bigg)
+                \bigg(1 + \frac{GMdr}{r_2^2c^2}\bigg)
+                ... \bigg(1 + \frac{GMdr}{r_n^2c^2}\bigg)
+            \bigg)\\
+        \log(f) &= 
+            \log\bigg(1 + \frac{GMdr}{r_1^2c^2}\bigg) 
+            + \log\bigg(1 + \frac{GMdr}{r_2^2c^2}\bigg)
+            ... 
+            + \log\bigg(1 + \frac{GMdr}{r_n^2c^2}\bigg)
+    \end{align*}
+    Using the approximation $\log(1 + x) \approx x$ and assuming $n \to \infty$ 
+    we also approximated the sum to an integral hence
+    \begin{align*}
+        \log(f) &= \sum_{i=1}^n \frac{GMdr}{r_i^2c^2} = \frac{GM}{c^2}\sum_{i=1}^n \frac{dr}{r_i^2}\\
+        \log(f) &= \frac{GM}{c^2} \int_{r_{low}}^{r_{high}} \frac{dr}{r^2}\\
+        \log(f) &= \frac{GM}{c^2} \bigg[\frac{1}{r_{low}} - \frac{1}{r_{high}}\bigg]
+    \end{align*}
+    \cleardoublepage
+    Finally, if we remove the logarithm and we approximate the exponential
+    function using that $e^x \approx 1 +x$ we get that
+    \begin{align*}
+        f &= e^{\frac{GM}{c^2} \big[\frac{1}{r_{low}} - \frac{1}{r_{high}}\big]}\\
+        f &= 1 + \frac{GM}{c^2} \bigg[\frac{1}{r_{low}} - \frac{1}{r_{high}}\bigg]
+    \end{align*}
+    Which is the factor we wanted.
+\end{proof}
+\begin{proof}{\textbf{5.4}}
+    Because of problem 5.3, we know that the time elapsed on the satellite
+    is more compared to the time elapsed on the ground due to the General
+    Relativity effects. They are related by the following equation
+    \begin{align*}
+        \Delta t_{gr} =
+        \bigg(1 + \frac{GM}{c^2} \bigg[\frac{1}{r_{low}} - \frac{1}{r_{high}}\bigg]\bigg)
+        \Delta t_g
+    \end{align*}
+    We also need to take into account the Special Relativity effects, hence
+    \begin{align*}
+        \Delta t_{sr} &= \bigg(\sqrt{1 - \frac{v^2}{c^2}}\bigg)\Delta t_{gr}\\
+        \Delta t_{sr} &=
+        \bigg(\sqrt{1 - \frac{v^2}{c^2}}\bigg)
+        \bigg(1 + \frac{GM}{c^2} \bigg[\frac{1}{r_{low}} - \frac{1}{r_{high}}\bigg]\bigg)
+        \Delta t_g
+    \end{align*}
+    Where we used that $t_{sr} = t_{gr}/\gamma$ which is the satellite
+    time-dilation (the proper time) we would get from an observer
+    at the height of the satellite due to the Special Relativity effects.
+    Therefore the factor by which a clock on a satellite runs faster
+    relative to a clock on the surface of the earth is
+    \begin{align*}
+        f &=
+        \bigg(\sqrt{1 - \frac{3900^2}{300,000,000^2}}\bigg)\\
+        &\quad\times\bigg(1 +
+        \frac{6.67 \times10^{-11} \cdot 6 \times 10^{24}}{(300,000,000)^2}
+        \bigg[\frac{1}{6400\times10^3} - \frac{1}{26600\times10^3}\bigg]\bigg)\\
+        f &= 0.9999999999154999 \times 1.0000000005276237\\
+        f &= 1.0000000004431235
+    \end{align*}
+    Finally, if one day passed on the surface of the earth (86400 seconds)
+    then in the satellite would have passed $86400.00003828587$ seconds
+    which gives us a difference of $3.83 \times 10^{-5}$ seconds or
+    $38.3 \mu s$.
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.5}}
+\begin{itemize}
+    \item [(a)] In this case, $A$ just sees $B$ moving, so $A$ is not aware
+    of any acceleration which implies that $A$ is only aware
+    of the Special Relativity effect as follows
+    \begin{align*}
+        \Delta t_B &= \bigg(\sqrt{1 - \frac{v^2}{c^2}}\bigg)\Delta t_{A}
+    \end{align*}
+    Where we used that $t_B = t_{A}/\gamma$ which is $B$'s
+    time-dilation (the proper time) we would get compared to
+    $A$ due to the Special Relativity effects.
+    Hence the the factor by which a clock on $B$ runs slower relative to a
+    clock on $A$ is
+    \begin{align*}
+        f &= \sqrt{1 - \frac{v^2}{c^2}}\\
+        f &= 1 - \frac{v^2}{2c^2}
+    \end{align*}
+    Where we used that $\sqrt{1 - v^2/c^2} \approx 1 - v^2/2c^2$ since we know
+    that $v \ll c$.
+
+    \item [(b)] From this reference frame, $B$ sees $A$ rotating with a
+    velocity $v$ and $B$ being stationary experiences an acceleration away
+    from $A$, i.e. like a gravitational effect, hence  
+    the General Relativity effects must be taken into account.
+
+    We know that the time elapsed on a stationary observer $A'$ at 
+    a distance $r$ from $B$ is more compared to the
+    time elapsed on $B$ due to the General Relativity effects
+    and they are related by the following equation
+    \begin{align*}
+        \Delta t_{A'} =
+        \bigg(1 + \frac{ar}{c^2}\bigg)
+        \Delta t_B
+    \end{align*}
+    We also need to take into account the Special Relativity effects, hence
+    \begin{align*}
+        \Delta t_A &= \bigg(\sqrt{1 - \frac{v^2}{c^2}}\bigg)\Delta t_{A'}\\
+        \Delta t_A &=
+        \bigg(\sqrt{1 - \frac{v^2}{c^2}}\bigg)
+        \bigg(1 + \frac{ar}{c^2}\bigg)
+        \Delta t_{B}
+    \end{align*}
+    Where we used that $t_A = t_{A'}/\gamma$ which is $A$'s
+    time-dilation (the proper time) we would get from a stationary observer
+    $A'$ at a distance $r$ from $B$ due to the Special Relativity effects.
+    \cleardoublepage
+    Thus the factor by which a clock on $A$ runs faster relative to a
+    clock on $B$ is
+    \begin{align*}
+        f &=
+        \bigg(\sqrt{1 - \frac{v^2}{c^2}}\bigg)
+        \bigg(1 + \frac{ar}{c^2}\bigg)\\
+        f &=
+        \bigg(1 - \frac{v^2}{2c^2}\bigg)
+        \bigg(1 + \frac{v^2}{c^2}\bigg)\\
+        f &= 1 + \frac{v^2}{c^2} - \frac{v^2}{2c^2}  - \frac{v^4}{2c^4}\\
+        f &\approx 1 + \frac{v^2}{2c^2}
+    \end{align*}
+    Where we used that $\sqrt{1 - v^2/c^2} \approx 1 - v^2/2c^2$ and we
+    removed the term which has the 4th power of $v$ since we know
+    that $v \ll c$.
+    But we are interested in the inverse factor which explains that a clock
+    on $B$ runs slower relative to a clock on $A$, therefore we have that
+    \begin{align*}
+        f &= \frac{1}{1 + \frac{v^2}{2c^2}} \approx 1 - \frac{v^2}{2c^2}
+    \end{align*}
+    Where we used the binomial approximation again and the result matches
+    to what we obtained in (a).
+\cleardoublepage
+    \item [(c)] In this case, $A$ sees $B$ stationary since
+    its reference frame rotates with the same frequency as $B$, hence there
+    is no Special Relativity effect to account for.
+    
+    Let us imagine then a series of $n$ clocks from $A$ to $B$ each
+    separated by a distance $dx$.
+    The gravitational acceleration for each clock where the first clock
+    is at a distance $x_1$ from $A$ the second is at a distance $x_2$ and so on
+    is $a = v_x^2/x_k = x_k\omega^2$ where we used that $v_x = x\omega$ also
+    it's worth noticing that the acceleration is pointing outward from $A$
+    hence we treat it as a negative acceleration.
+    Hence for the first clock at a distance $dx$ from $A$ the time elapsed
+    compared to a clock on $A$ will be
+    \begin{align*}
+        \Delta t_1 = \bigg(1 - \frac{x_1\omega^2dx}{c^2}\bigg)\Delta t_A
+    \end{align*}
+    In the same way for the $nth$ clock at $B$ we would have that
+    \begin{align*}
+        \Delta t_B &= \bigg(1 - \frac{x_n\omega^2dx}{c^2}\bigg)\Delta t_{n-1}\\
+        \Delta t_B &=
+        \bigg(1 - \frac{x_n\omega^2dx}{c^2}\bigg)...
+        \bigg(1 - \frac{x_1\omega^2dx}{c^2}\bigg)
+        \Delta t_{A}
+    \end{align*}
+    Thus the factor relating the time elapsed in $B$ with the time elapsed in
+    $A$ is 
+    \begin{align*}
+        f &= \bigg(1 - \frac{x_n\omega^2dx}{c^2}\bigg)...
+        \bigg(1 - \frac{x_1\omega^2dx}{c^2}\bigg)\\
+        \log f &= \log \bigg(1 - \frac{x_n\omega^2dx}{c^2}\bigg) + ...+
+        \log \bigg(1 - \frac{x_1\omega^2dx}{c^2}\bigg)\\
+        \log f &= -\sum_{k = 1}^n \frac{x_k\omega^2dx}{c^2}\\
+        \log f &= -\frac{\omega^2}{c^2} \int_0^r xdx
+    \end{align*}
+    Using the approximation $\log(1 + x) \approx x$ and assuming $n \to \infty$ 
+    we also approximate the sum to an integral. Therefore, we have that
+    \begin{align*}
+        \log f &= -\frac{\omega^2}{c^2} \frac{r^2}{2}\\
+        f &= e^{-\frac{v^2}{2c^2}}\\
+        f &\approx 1 - \frac{v^2}{2c^2}
+    \end{align*}
+    Which also matches with the result we obtained in (a) and (b).
+\end{itemize}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.12}}
+\begin{itemize}
+\item [(a)] Given that from the earth the periods of acceleration are
+negligible the twin on the spaceship is younger compared to the twin on the
+Earth by a factor of
+\begin{align*}
+    \sqrt{1 - \frac{v^2}{c^2}} \approx 1 - \frac{v^2}{2c^2} 
+\end{align*}
+Since from the Earth, the spaceship travels approximately a time $2l/v$
+then the twin on the spaceship is
+$$ \frac{2l}{v}\frac{v^2}{2c^2} = l \frac{v}{c^2}$$
+much younger than the twin on Earth.
+
+\item [(b)] From the spaceship frame, the twin on the spaceship sees the
+twin on Earth traveling with a velocity $v$ hence if $t_s$ is the time we see
+from the spaceship and $t_e$ is the proper time on Earth we have that 
+\begin{align*}
+    t_{s} &= \gamma t_e\\
+    % t_e &= \bigg(1 - \frac{v^2}{2c^2}\bigg) t_s\\
+    t_e &= \bigg(1 - \frac{v^2}{2c^2}\bigg) \frac{2l}{v}\\
+    t_e &= \frac{2l}{v} - \frac{vl}{c^2}
+\end{align*}
+Where we used that $t_s = l/v$ for both directions of the journey.
+This implies that the Earth time is less than the spaceship time by 
+$vl/c^2$. But then the spaceship starts to deaccelerate for quite some time
+hence because of the General Relativity effects we have that
+\begin{align*}
+    t_{e} &= \bigg(1 + \frac{al}{c^2}\bigg)t_s
+\end{align*}
+Also if we consider that $a = v/t'$ where $t' = t_s$ is the time we
+deaccelerate according to the spaceship so we have that
+\begin{align*}
+    t_{e} &= t' + \frac{vl}{c^2}
+\end{align*}
+The same thing happens when the spaceship accelerates again hence the
+earth time is above the spaceship time by $2vl/c^2$ so summing up the values
+we get that the time on earth is above the time on the spaceship by
+$2vl/c^2 - vl/c^2 = vl/c^2$. Therefore the twin on the spaceship is $vl/c^2$
+much younger than the one on Earth which matches the result we got
+earlier. 
+
+
+
+\end{itemize}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.21}}
+    We want to verify that $f = \gamma^3 ma$ using the equation we have for $v$.
+    First, let us note that
+    \begin{align*}
+        v &= \frac{gt}{\sqrt{1 + (gt)^2}}\\
+        1 - v^2 &= 1 - \frac{(gt)^2}{1 + (gt)^2}\\
+        1 - v^2 &= \frac{1}{1 + (gt)^2}\\
+        \frac{1}{\sqrt{1 - v^2}} &= \sqrt{1 + (gt)^2}
+    \end{align*}
+    This shows that $\gamma = \sqrt{1 + (gt)^2}$. Now we compute $a = dv/dt$
+    as follows
+    \begin{align*}
+        a = \frac{dv}{dt} &= \frac{g}{(1 + (gt)^2)^{3/2}}
+    \end{align*}
+    Hence multiplying the equation by $m$ on both sides and using that
+    $f = mg$ we get that
+    \begin{align*}
+        \frac{mg}{(1 + (gt)^2)^{3/2}} &= ma\\
+        f &= (1 + (gt)^2)^{3/2}ma \\
+        f &= \gamma^3ma
+    \end{align*}
+    Which is the equation we want.
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.22}}
+    Let us derivate first the velocity $v(\tau)$ i.e. the velocity of the
+    particle at time $\tau$ (on the particle's frame) with respect to the
+    original inertial frame.
+
+    The velocity of the particle after some time $t + d\tau$
+    with respect to the original inertial frame is given by the
+    velocity addition formula. If the particle is moving at a velocity
+    $gdt$ with respect to a previous inertial frame
+    moving at a velocity $v(\tau)$ we see that
+    \begin{align*}
+        v(\tau + d\tau) = \frac{gd\tau + v(\tau)}{1 + v(\tau)gdt}
+    \end{align*}
+    The left-hand side can be written as $v(\tau) + dv$ so
+    \begin{align*}
+        v(\tau) + dv &= \frac{(gd\tau + v(\tau))}{(1 + v(\tau)gd\tau)}
+        \frac{(1 - v(\tau)gd\tau)}{(1 - v(\tau)gd\tau)}\\
+        v(\tau) + dv &= \frac{gd\tau - v(\tau)(gd\tau)^2 + v(\tau) - v(\tau)^2gd\tau}
+        {1 - (v(\tau)gd\tau)^2}\\
+        v + dv &= gd\tau + v - v^2gd\tau
+    \end{align*}
+    Where we removed the terms involving $d\tau^2$ and used $v(\tau) = v$ for
+    simplicity. Hence we have that
+    \begin{align*}
+        dv &= (1 - v^2)gd\tau\\
+        \int_0^v\frac{dv}{(1 - v^2)} &= g\int_0^\tau d\tau\\
+        \tanh^{-1}(v) &= g\tau\\
+        v &= \tanh(g\tau)
+    \end{align*}
+    Which is the equation we were looking for $v$.
+
+    For $\gamma$ we know that
+    \begin{align*}
+        \gamma &= \frac{1}{\sqrt{1 - v^2}}
+    \end{align*}
+    Hence, replacing the value we have for $v$ we get that
+    \begin{align*}
+        \gamma &= \frac{1}{\sqrt{1 - \tanh^2(g\tau)}} = \cosh(g\tau)
+    \end{align*}
+
+    Finally, for small periods, the time in the original inertial frame
+    is related to the time measured on the particle by the time-dilation
+    equation hence 
+    \begin{align*}
+        dt &= \gamma d\tau
+    \end{align*}
+    Therefore we have that
+    \begin{align*}
+        \int_0^t dt &= \int_0^\tau\cosh(g\tau) d\tau\\
+        gt &= \sinh(g\tau)
+    \end{align*}
+    Which is the last equation we wanted.
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.28}}
+    Let us consider a function
+    $y(t) = y_0(t) + \varepsilon(t)$ where $y_0$
+    is the path that yields the stationary value and $\varepsilon$ is a small
+    variation. Let us name the action integral as
+    $S(y) = \int_{t_1}^{t_2} \big(\frac{mv^2}{2} - mgy\big)dt$. We want
+    to show that $S(y_0)$ is a global minimum for $S$ so let us compute first
+    $S(y_0 + \epsilon)$ as follows
+    \begin{align*}
+        S(y_0 + \varepsilon) 
+        &= \int_{t_1}^{t_2} \bigg(\frac{m(\dot{y_0}(t) + \dot{\varepsilon}(t))^2}{2}
+        - mg(y_0(t) + \varepsilon(t))\bigg)dt\\
+        &= \frac{m}{2}\int_{t_1}^{t_2}
+        \bigg(\dot{y_0}^2 + 2\dot{y_0}\dot{\varepsilon} +\dot{\varepsilon}^2
+        - 2g(y_0 + \varepsilon)\bigg)dt\\
+        &= \frac{m}{2}\int_{t_1}^{t_2}
+        \bigg(\dot{y_0}^2 +\dot{\varepsilon}^2 - 2g(y_0 + \varepsilon)\bigg)dt
+        + m\int_{t_1}^{t_2} \dot{y_0}\dot{\varepsilon} dt
+    \end{align*}
+    Integrating by parts the last term and using that $\varepsilon$ is $0$ 
+    at the boundaries, we get that
+    \begin{align*}
+        S(y_0 + \epsilon)
+        &= \frac{m}{2}\int_{t_1}^{t_2}
+        \bigg(\dot{y_0}^2 +\dot{\varepsilon}^2 - 2g(y_0 + \varepsilon)\bigg)dt
+        + m\bigg(\bigg[\dot{y_0}\varepsilon\bigg]_{t_1}^{t_2} -
+        \int_{t_1}^{t_2} \ddot{y_0}\varepsilon dt\bigg)\\
+        &= \frac{m}{2}\int_{t_1}^{t_2}
+        \bigg(\dot{y_0}^2 +\dot{\varepsilon}^2 - 2g(y_0 + \varepsilon)
+        - 2\ddot{y_0}\varepsilon\bigg)dt\\
+        &= \frac{m}{2}\int_{t_1}^{t_2}
+        \bigg(\dot{y_0}^2 +\dot{\varepsilon}^2 - 2gy_0 - 2\varepsilon(
+        g + \ddot{y_0})\bigg)dt
+    \end{align*}
+    Since we want to show that $S(y_0)$ is the global minimum let us compute
+    $S(y_0 + \varepsilon) - S(y_0)$ as follows
+    \begin{align*}
+        S(y_0 + \epsilon) - S(y_0)
+        &= \frac{m}{2}\int_{t_1}^{t_2}
+        \bigg(\dot{y_0}^2 +\dot{\varepsilon}^2 - 2gy_0 - 2\varepsilon(
+        g + \ddot{y_0})\bigg)dt\\
+        &\quad\quad- \frac{m}{2}\int_{t_1}^{t_2}
+        \bigg(\dot{y_0}^2 - 2gy_0\bigg)dt\\
+        &= \frac{m}{2}\int_{t_1}^{t_2}
+        \bigg(\dot{\varepsilon}^2 - 2\varepsilon(g + \ddot{y_0})\bigg)dt
+    \end{align*}
+    On the other hand, we know $y_0$ makes $S$ stationary then by definition
+    we have that $S(y_0 + \varepsilon) - S(y_0) = O(\varepsilon^2)$ which
+    implies that the integral term that depends on $\varepsilon$ must be $0$
+    hence
+    \begin{align*}
+        S(y_0 + \epsilon) - S(y_0)
+        &= \frac{m}{2}\int_{t_1}^{t_2} \dot{\varepsilon}^2dt
+    \end{align*}
+    Finally, since the integral of a positive function must be positive
+    we have that $S(y_0 + \epsilon) - S(y_0) \geq 0$ which implies that
+    $S(y_0)$ is a global minimum for $S$ as we wanted.
+\end{proof}
+
+THE END.
+\end{document}
+
+
